@@ -1,0 +1,262 @@
+<!--=== Content Part ===-->
+    <div class="container content">     
+        <div class="row">
+            <div class="col-md-4 md-margin-bottom-50">
+                <!-- Our Services -->
+                <div class="servive-block servive-block-blue">
+                    <i class="icon-custom icon-color-light rounded-x icon-line icon-diamond"></i>
+                    <h2 class="heading-md">Indian Market</h2>
+                    <p>Donec id elit non mi porta gravida at eget metus id elit mi egetine usce dapibus elit nondapibus</p>
+                </div>
+                <!-- End Our Services -->
+
+                <p><iframe src="http://www.appuonline.com/nseindices-ticker.html" width="370" height="34" frameborder="0" scrolling="no"></iframe></p>
+                <br>
+
+                <div class="tag-box tag-box-v1">
+                  <!--   <h2>Gold Price</h2> -->
+                  <p><!-- TradingView Widget BEGIN -->
+<div id="tv-miniwidget-08e72"></div>
+<script type="text/javascript" src="https://d33t3vvu2t2yu5.cloudfront.net/tv.js"></script>
+<script type="text/javascript">
+new TradingView.MiniWidget({
+  "container_id": "tv-miniwidget-08e72",
+  "tabs": [
+    "Equities",
+    "Commodities",
+    "Bonds",
+    "Forex"
+  ],
+  "symbols": {
+    "Equities": [
+      [
+        "S&P500",
+        "SPX500"
+      ],
+      [
+        "NQ100",
+        "NAS100"
+      ],
+      [
+        "Dow30",
+        "DOWI"
+      ],
+      [
+        "Nikkei225",
+        "JPN225"
+      ],
+      [
+        "Apple",
+        "AAPL "
+      ],
+      [
+        "Google",
+        "GOOG"
+      ]
+    ],
+    "Commodities": [
+      [
+        "Emini",
+        "ES1!"
+      ],
+      [
+        "Euro",
+        "E61!"
+      ],
+      [
+        "Gold",
+        "GC1!"
+      ],
+      [
+        "Oil",
+        "CL1!"
+      ],
+      [
+        "Gas",
+        "NG1!"
+      ],
+      [
+        "Corn",
+        "ZC1!"
+      ]
+    ],
+    "Bonds": [
+      [
+        "US 2YR",
+        "TUZ2013"
+      ],
+      [
+        "US 10YR",
+        "TYZ2013"
+      ],
+      [
+        "US 30YR",
+        "USZ2013"
+      ],
+      [
+        "Euro Bund",
+        "FX:BUND"
+      ],
+      [
+        "Euro BTP",
+        "EUREX:II1!"
+      ],
+      [
+        "Euro BOBL",
+        "EUREX:HR1!"
+      ]
+    ],
+    "Forex": [
+      "FX:EURUSD",
+      "FX:GBPUSD",
+      "FX:USDJPY",
+      "FX:USDCHF",
+      "FX:AUDUSD",
+      "FX:USDCAD"
+    ]
+  },
+  "gridLineColor": "#E9E9EA",
+  "fontColor": "#83888D",
+  "underLineColor": "#F0F0F0",
+  "timeAxisBackgroundColor": "#FFFFFF",
+  "trendLineColor": "#FF7965",
+  "activeTickerBackgroundColor": "#EDF0F3",
+  "large_chart_url": "https://www.tradingview.com/e/",
+  "noGraph": false,
+  "width": "340px",
+  "height": "400px"
+});
+</script>
+<!-- TradingView Widget END -->
+</p>
+                    <p><script type="text/javascript">var _mcq=["6",""];</script><span id='_mc_mg6'></span><script language="JavaScript" src="http://stat1.moneycontrol.com/mcjs/common/mc_widget.js"></script><noscript><a href="http://www.moneycontrol.com">Sensex/Nifty</a></noscript></p>
+                </div>
+
+                
+            </div><!--/col-md-4-->
+
+            <div class="col-md-4 md-margin-bottom-50">
+                <!-- Our Services -->
+                <div class="servive-block servive-block-u">
+                    <i class="icon-custom icon-color-light rounded-x fa fa-thumbs-o-up"></i>
+                    <h2 class="heading-md">Unify Box</h2>
+                    <p>Donec id elit non mi porta gravida at eget metus id elit mi egetine. Fusce dapibus</p>                        
+                </div>
+                <!-- End Our Services -->
+
+                <p><iframe src="http://widgets.prorealtime.com/ProRealTime_FlashQuotes/itcharts.phtml?wid=2014058027&k=2ed5e47dbd33ec021b9aa7321a5cf550" height="300" width ="360" frameborder="0" scrolling="no"></iframe></p>
+
+                <!-- CURRENCY-CONVERTER.ORG.UK CURRENCY CONVERTER LIVE START -->
+<div style="width:360px;margin:0;padding:0;border:1px solid #cccccc;background:#f0f0f0;">
+<div style="width:178px;text-align:center;padding:2px 0px;background:#;font-family:arial;font-size:11px;color:#666666;font-weight:bold;vertical-align:middle;">
+<a style="color:#666666;text-decoration:none;text-transform:uppercase;" href="http://www.currency-converter.org.uk" target="_new">Exchange Rate Converter</a>
+</div>
+<div style="padding:4px;">
+<script type="text/javascript"> 
+var dcf = 'GBP';
+var dct = 'EUR';
+var fc = '333333';
+var lc = '666666';
+var bdr = 'cccccc';
+var mbg = 'f0f0f0';
+var ifc = '333333';
+var ibdc = 'CCCCCC';
+var ibgc = 'FFFFFF';
+var tz = 'userset';
+
+</script><script type="text/javascript" src="http://www.currency-converter.org.uk/widget/CCUK-CCLM-1.php"></script></div></div>
+<!-- CURRENCY-CONVERTER.ORG.UK CURRENCY CONVERTER LIVE END -->
+
+<div class="map map-box map-box-space1 margin-bottom-40">
+                    
+<div id="wpdc_embed_14041370041" style="display: none">Live Gold &amp; Silver Price Charts in INR</div><head></head><script src="http://www.widgipedia.com/embed/rmani84/Live-Gold--Silver-Price-Charts-in-INR_15085w-14041370041t-1404137004058i-32768p.js"></script></div>
+
+
+                <div class="margin-bottom-30 clearfix"></div> 
+
+                
+            </div><!--/col-md-4-->
+
+            <div class="col-md-4 md-margin-bottom-50">
+                <!-- Our Services -->
+                <div class="servive-block servive-block-red">
+                    <i class="icon-custom icon-color-light rounded-x icon-line icon-fire"></i>
+                    <h2 class="heading-md">Red Box</h2>
+                    <p>Donec id elit non mi porta gravida at eget metus id elit mi egetine usce dapibus elit nondapibus</p>
+                </div>
+                <!-- End Our Services -->
+
+                <div><!-- TradingView Widget BEGIN -->
+<script type="text/javascript" src="https://d33t3vvu2t2yu5.cloudfront.net/tv.js"></script>
+<script type="text/javascript">
+new TradingView.widget({
+  "autosize": true,
+  "symbol": "FX:SPX500",
+  "interval": "D",
+  "timezone": "exchange",
+  "theme": "White",
+  "style": "0",
+  "toolbar_bg": "#f1f3f6",
+  "withdateranges": true,
+  "hide_side_toolbar": false,
+  "allow_symbol_change": true,
+  "details": true,
+  "hotlist": true,
+  "calendar": true,
+  "news": [
+    "stocktwits",
+    "headlines"
+  ],
+  "show_popup_button": true,
+  "popup_width": "1000",
+  "popup_height": "650"
+});
+</script>
+<!-- TradingView Widget END --></div>
+
+
+
+                <p><iframe src="http://widgets.prorealtime.com/ProRealTime_FlashXLight/itcharts.phtml?wid=2014901442&k=5ee541fb952cedc7a7819b50c41e9df1" height="300" width ="360" frameborder="0" scrolling="no"></iframe></p><br>
+
+                <!-- Google Map -->
+                
+
+
+<!--Testimonials Block-->
+                <div class="carousel slide testimonials testimonials-v1" id="testimonials-1">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <script src="//www.gmodules.com/ig/ifr?url=http://hosting.gmodules.com/ig/gadgets/file/100840413740199312943/stock-quotes.xml&amp;up_stockList=%5EIXIC%2C%5EGSPC%2C%5EN225%2C%5EHSI%2C%5ESTI%2C%5EFTSE%2C%5EGDAXI%2C%5EFCHI&amp;up_chart_bool=1&amp;up_font_size=12&amp;up_symbol_bool=0&amp;up_chart_period=0&amp;up_refresh_secs=30&amp;synd=open&amp;w=290&amp;h=300&amp;title=Stock+Quotes&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js"></script>
+                            
+                        </div>
+                        <div class="item">
+                            <script src="//www.gmodules.com/ig/ifr?url=http://edulifeline.com/includes/stocks_widget/widget.xml&amp;synd=open&amp;w=250&amp;h=300&amp;title=Financial+Stock+Ticker+(Live)&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js"></script>
+
+
+                            
+                        </div>
+                        <div class="item">
+                            <script src="//www.gmodules.com/ig/ifr?url=http://edulifeline.com/includes/stocks_widget/widget.xml&amp;synd=open&amp;w=250&amp;h=300&amp;title=Financial+Stock+Ticker+(Live)&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js"></script>
+
+
+                            
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="carousel-arrow">
+                        <a data-slide="prev" href="#testimonials-1" class="left carousel-control">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        <a data-slide="next" href="#testimonials-1" class="right carousel-control">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </div>
+                </div>            
+                <!--End Testimonials Block-->
+
+                    
+            </div><!--/col-md-4-->
+        </div><!--/row-->
+    </div>
+</div>

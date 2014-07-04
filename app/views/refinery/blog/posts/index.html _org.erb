@@ -1,0 +1,238 @@
+<div class="container">
+
+  
+	
+<div class="span7">
+<!-- <h2>Blogs<%#= image_tag("blogstitle.png",:alt=>"blogstitle")%></h2> -->
+  <% content_for :body do %>
+  
+
+  <%= raw @page.content_for(Refinery::Pages.default_parts.first.to_sym) if Refinery::Pages.default_parts.any? %>
+
+  
+
+<% end %>
+
+<% content_for :side_body_prepend do -%>
+  <%= raw @page.content_for(Refinery::Pages.default_parts.second.to_sym) %>
+<% end if Refinery::Pages.default_parts.many? -%>
+<%= render '/refinery/blog/shared/body_content_right' %>
+
+<%= render "/refinery/content_page" %>
+<% content_for :stylesheets, stylesheet_link_tag('refinery/blog/frontend') %>
+</div>
+
+
+</div>
+<!--=== Content Part ===-->
+    <div class="container content">   
+      <div class="row blog-page">    
+            <!-- Left Sidebar -->
+          <div class="col-md-9">
+                <!--Blog Post-->        
+              <div class="blog margin-bottom-40">
+                  <!-- <h2><a href="blog_item_option1.html">Unify is an incredibly beautiful and fully responsive Bootstrap 3 Template</a></h2> -->
+                    <!-- <div class="blog-post-tags">
+                        <ul class="list-unstyled list-inline blog-info">
+                            <li><i class="fa fa-calendar"></i> February 02, 2013</li>
+                            <li><i class="fa fa-pencil"></i> Diana Anderson</li>
+                            <li><i class="fa fa-comments"></i> <a href="#">24 Comments</a></li>
+                        </ul>
+                        <ul class="list-unstyled list-inline blog-tags">
+                            <li>
+                                <i class="fa fa-tags"></i> 
+                                <a href="#">Technology</a> 
+                                <a href="#">Education</a>
+                                <a href="#">Internet</a>
+                                <a href="#">Media</a>
+                            </li>
+                        </ul>                                                
+                    </div> -->
+                    <!-- <div class="blog-img">
+                        <img class="img-responsive" src="assets/img/posts/2.jpg" alt="">
+                    </div> -->
+                    <p style="padding-top:0px;"><% if @posts.any? %>
+
+
+
+    <section id="blog_posts">
+
+     
+      <%= render :partial => "/refinery/blog/shared/post", :collection => @posts %>
+      <%= will_paginate @posts %>
+    </section>
+
+  <% else %>
+    <p><%= t('.no_blog_articles_yet') %></p>
+
+  <% end %></p>
+                    <!-- <p><a class="btn-u btn-u-small" href="blog_item_option1.html"><i class="fa fa-plus-sign"></i> Read More</a></p>  -->
+                </div>
+                <!--End Blog Post-->        
+
+                <!--Blog Post-->        
+                        
+                
+                <!--Pagination-->
+                <div class="text-center">
+                    <ul class="pagination">
+                        <li><a href="#">«</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li class="active"><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">6</a></li>
+                        <li><a href="#">7</a></li>
+                        <li><a href="#">8</a></li>
+                        <li><a href="#">»</a></li>
+                    </ul>                                                            
+                </div>
+                <!--End Pagination-->
+            </div>
+            <!-- End Left Sidebar -->
+
+            <!-- Right Sidebar -->
+          <div class="col-md-3">
+                <!-- Social Icons -->
+                <div class="magazine-sb-social margin-bottom-30">
+                    <div class="headline headline-md"><h2>Social Icons</h2></div>
+
+                    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-like" data-href="http://www.facebook.com/koresol"
+data-width="50" data-layout="button_count" data-action="like"
+data-show-faces="true" data-share="false"></div>
+
+<a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=300&amp;pubid=ra-53673b1b32318341"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0"/></a>
+<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53673b1b32318341"></script>
+<!-- AddThis Button END -->
+                    
+                    <div class="clearfix"></div>                
+                </div>
+                <!-- End Social Icons -->
+
+                <!-- Posts -->
+                <div class="posts margin-bottom-40">
+                    <div class="headline headline-md"><h2>Recent Posts</h2></div>
+
+                    <% if @posts.many? %>
+  
+  <!--changes by pavan start-->
+  
+  <ul id="blog_posts"  style="margin-left:0px; padding-left:0px;"  ><!--changes by pavan end-->
+    <% @posts.each do |blog_post| %>
+     
+      <li style="margin-left:0px; padding-left:0px; padding-top:10px; list-style-type:none;" >
+        
+        <p><a href="#"><%= link_to blog_post.title, refinery.blog_post_path(blog_post) %></a></p>
+       
+      </li>
+
+    <% end %>
+  </ul>
+
+<% end %>
+                    <!-- <dl class="dl-horizontal">
+                        <dt><a href="#"><img src="assets/img/sliders/elastislide/6.jpg" alt="" /></a></dt>
+                        <dd>
+                            <p><a href="#">Responsive Bootstrap 3 Template placerat idelo alac eratamet.</a></p> 
+                        </dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt><a href="#"><img src="assets/img/sliders/elastislide/10.jpg" alt="" /></a></dt>
+                        <dd>
+                            <p><a href="#">100+ Amazing Features Layer Slider, Layer Slider, Icons, 60+ Pages etc.</a></p> 
+                        </dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                        <dt><a href="#"><img src="assets/img/sliders/elastislide/11.jpg" alt="" /></a></dt>
+                        <dd>
+                            <p><a href="#">Developer Friendly Code imperdiet condime ntumi mperdiet condim.</a></p> 
+                        </dd>
+                    </dl> -->
+                </div><!--/posts-->
+                <div class="posts margin-bottom-40">
+                    <div class="headline headline-md"><h2>Blogs Categories</h2></div>
+                    <% if @categories.any? %>
+  <!-- <h4><%#= t('.title') %></h4> -->
+  <ul id='categories' style="margin-left:0px; padding-left:0px;" >
+    <% @categories.each do |category| %>
+      <li<%= " class='selected'" if @category.present? and @category.id == category.id %> style="list-style-type:none;">
+        <%= link_to "#{category.title} (#{category.post_count})", refinery.blog_category_path(category) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+                  </div>
+
+                  <div class="posts margin-bottom-40">
+                    <div class="headline headline-md"><h2>Archives</h2></div>
+                    <%= blog_archive_widget %>
+                  </div>
+                <!-- End Posts -->
+
+              <!-- Tabs Widget -->
+              <div class="headline headline-md"><h2>Tabs Widget</h2></div>
+                <div class="tab-v2 margin-bottom-40">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#home-1">About Us</a></li>
+                        <li><a data-toggle="tab" href="#home-2">Quick Links</a></li>
+                    </ul>                
+                    <div class="tab-content">
+                        <div id="home-1" class="tab-pane active">
+                            <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac ac adipiscing nunc.</p> <p>Pellentesque fermentum, ante ac felis consectetur id. Donec eget orci metusvivamus imperdiet.</p>                        
+                        </div>
+                        <div id="home-2" class="tab-pane magazine-sb-categories">
+                            <div class="row">
+                                <ul class="list-unstyled col-xs-6">
+                                    <li><a href="#">Best Sliders</a></li>
+                                    <li><a href="#">Parralax Page</a></li>
+                                    <li><a href="#">Backgrounds</a></li>
+                                    <li><a href="#">Parralax Slider</a></li>
+                                    <li><a href="#">Responsive</a></li>
+                                    <li><a href="#">800+ Icons</a></li>
+                                </ul>                        
+                                <ul class="list-unstyled col-xs-6">
+                                    <li><a href="#">60+ Pages</a></li>
+                                    <li><a href="#">Layer Slider</a></li>
+                                    <li><a href="#">Bootstrap 3</a></li>
+                                    <li><a href="#">Fixed Header</a></li>
+                                    <li><a href="#">Best Template</a></li>
+                                    <li><a href="#">And Many More</a></li>
+                                </ul>                        
+                            </div>
+                        </div>
+                    </div>
+                </div>            
+                <!-- End Tabs Widget -->
+
+              <!-- Photo Stream -->
+              <div class="headline headline-md"><h2>Photo Stream</h2></div>
+                <ul class="list-unstyled blog-photos margin-bottom-30">
+                    <li><a href="#"><img class="hover-effect" alt="" src="assets/img/sliders/elastislide/5.jpg"></a></li>
+                    <li><a href="#"><img class="hover-effect" alt="" src="assets/img/sliders/elastislide/6.jpg"></a></li>
+                    <li><a href="#"><img class="hover-effect" alt="" src="assets/img/sliders/elastislide/8.jpg"></a></li>
+                    <li><a href="#"><img class="hover-effect" alt="" src="assets/img/sliders/elastislide/10.jpg"></a></li>
+                    <li><a href="#"><img class="hover-effect" alt="" src="assets/img/sliders/elastislide/11.jpg"></a></li>
+                    <li><a href="#"><img class="hover-effect" alt="" src="assets/img/sliders/elastislide/1.jpg"></a></li>
+                    <li><a href="#"><img class="hover-effect" alt="" src="assets/img/sliders/elastislide/2.jpg"></a></li>
+                    <li><a href="#"><img class="hover-effect" alt="" src="assets/img/sliders/elastislide/7.jpg"></a></li>
+                </ul>
+                <!-- End Photo Stream -->
+            </div>
+            <!-- End Right Sidebar -->
+
+            <!-- End Right Sidebar -->
+        </div><!--/row-->        
+    </div><!--/container-->   
+    <!--=== End Content Part ===-->
+

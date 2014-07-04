@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<%= render "/refinery/html_tag" %>
+  <% site_bar = render('/refinery/site_bar', :head => true) -%>
+  <head>
+    <%= render "/refinery/head" %>
+  </head>
+  <body id="<%= canonical_id @page %>">
+    <%= site_bar -%>
+    <div id="page_container">
+      <header id="header">
+        <%= render "/refinery/header" -%>
+      </header>
+
+      <!-- <div class="user_nav">
+      <% if current_user %>
+        Logged in as <%= current_user.email %>.
+        <%= link_to "Log out", main_app.userlogout_path %>
+      <% else %>
+        <%= link_to "Sign up", main_app.usersignup_path %> or
+        <%= link_to "Log in", main_app.userlogin_path  %>.
+
+      <% end %>
+    </div> -->
+  <br>    
+<% flash.each do |name, msg| %>
+<div class="container" style="width:55%">
+  <div class="tab-pane fade in" id="alert-2">
+      <div class="alert alert-success fade in alert-dismissable" style="text-align:center; border:1px solid green;">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><%= content_tag :div, msg, :id => "flash_#{name}" %>
+                            </div>
+     
+    </div>
+     </div>
+<% end %> 
+
+      <section id="page">
+        <%= yield %>
+      </section>
+      <footer>
+        <%= render "/refinery/footer" -%>
+      </footer>
+    </div>
+    <%= render "/refinery/javascripts" %>
+  </body>
+</html>

@@ -1,0 +1,132 @@
+<!-- <p>
+  <%#= t('.copyright', :year => Time.now.year,
+                      :site_name => Refinery::Core.site_name) %>
+</p> -->
+
+<!--=== Footer ===-->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 md-margin-bottom-40">
+                    <!-- About -->
+                    <div class="headline"><h2>About</h2></div>  
+                    <p class="margin-bottom-25 md-margin-bottom-40">Unify is an incredibly beautiful responsive Bootstrap Template for corporate and creative professionals.</p>    
+                    <!-- End About -->
+
+                    <!-- Monthly Newsletter -->
+                    <div class="headline"><h2>Monthly Newsletter</h2></div> 
+                    <p>Subscribe to our newsletter and stay up to date with the latest news and deals!</p><br/>
+                    
+
+                    
+
+                      
+                        
+
+            <%= form_tag(main_app.usersignup_path, :method => "get") do %>
+                <%#= label_tag(:q, "Search for:") %>
+                <%#= text_field_tag(:q) %>
+            <div class="input-group">
+                             <input type="text" name="email_subscribe" class="form-control" placeholder="Email Address">
+             <span class="input-group-btn">
+            <button type="submit" class="btn-u"><i>Subscribe</i></button>
+            <%#= submit_tag("Subscribe",:class=>"btn-u") %>    
+            </span>
+            
+                <% end %>
+                            <%#= link_to "Subscribe", main_app.usersignup_path,:class=>"btn-u", :method => "get" %>
+<!--                                <button class="btn-u" type="button">Subscribe</button>  -->
+                            
+                        </div>                  
+                    
+
+
+                    <!-- End Monthly Newsletter -->
+                </div><!--/col-md-4-->  
+                
+                <div class="col-md-4 md-margin-bottom-40">
+                    <!-- Recent Blogs -->
+                    <div class="posts">
+                        <div class="headline"><h2>Recent Blog Entries</h2></div>
+                        <dl class="dl-horizontal">
+                            <dt><a href="/blog/posts/publication-of-2013-terrorist-assets-report">
+                                 <%= image_tag("pn1.png",:alt=>'')%>
+                                </a></dt>
+                            <dd>
+                                <p><a href="/blog/posts/publication-of-2013-terrorist-assets-report">Publication of 2013 Terrorist Assets Report</a></p> 
+                            </dd>
+                        </dl>
+                        <dl class="dl-horizontal">
+                        <dt><a href="/blog/posts/google-unveils-new-android-version-in-push-against-apple">
+                            <%= image_tag("pn2.png",:alt=>'')%>
+                            </a></dt>
+                            <dd>
+                                <p><a href="/blog/posts/google-unveils-new-android-version-in-push-against-apple">Google Unveils New Android Version in Push Against Apple </a></p> 
+                            </dd>
+                        </dl>
+                        <dl class="dl-horizontal">
+                        <dt><a href="/blog/posts/bnp-paribas-will-be-suspended-from-trading-in-us-dollars">
+                            <%= image_tag("pn3.png",:alt=>'')%>
+                            </a></dt>
+                            <dd>
+                                <p><a href="/blog/posts/bnp-paribas-will-be-suspended-from-trading-in-us-dollars">BNP Paribas Will Be Suspended From Trading In US Dollars</a></p> 
+                            </dd>
+                        </dl>
+                    </div>
+                    <!-- End Recent Blogs -->                    
+                </div><!--/col-md-4-->
+
+                <div class="col-md-4">
+                    <!-- Contact Us -->
+                    <div class="headline"><h2>Contact Us</h2></div> 
+                    <address class="md-margin-bottom-40">
+                        Runawal Sanket, Baner Road  <br />
+                        Pune, India – 411 045 <br />
+                        Phone: 020 467 72556 <br />
+                        
+                        Email: <a href="mailto:contact@koresol.com" class="">contact@koresol.com</a>
+                    </address>
+                    <!-- End Contact Us -->
+
+                    <!-- Social Links -->
+                    <div class="headline"><h2>Stay Connected</h2></div> 
+                    <ul class="social-icons">
+                        <li><a href="http://koresol.com/feed/" target="_blank" data-original-title="Feed" class="social_rss"></a></li>
+                        <li><a href="https://www.facebook.com/koresol" target="_blank" data-original-title="Facebook" class="social_facebook"></a></li>
+                        <li><a href="https://twitter.com/intent/follow?source=followbutton&variant=1.0&screen_name=koresol" target="_blank" data-original-title="Twitter" class="social_twitter"></a></li>
+                        <li><a href="#" data-original-title="Goole Plus" class="social_googleplus"></a></li>
+                        <li><a href="#" data-original-title="Pinterest" class="social_pintrest"></a></li>
+                        <li><a href="https://www.linkedin.com/pub/nitin-kore/13/5bb/8ba" target="_blank" data-original-title="Linkedin" class="social_linkedin"></a></li>
+                        <li><a href="#" data-original-title="Vimeo" class="social_vimeo"></a></li>
+                    </ul>
+                    <!-- End Social Links -->
+                </div><!--/col-md-4-->
+            </div>
+        </div> 
+    </div><!--/footer-->
+    <!--=== End Footer ===-->
+
+    <!--=== Copyright ===-->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">                     
+                    <!-- <p>
+                        2014 &copy; Unify. ALL Rights Reserved. 
+                        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                    </p> -->
+                    <p>
+  <%= t('.copyright', :year => Time.now.year,
+                      :site_name => Refinery::Core.site_name) %>
+</p>
+                </div>
+                <div class="col-md-6">  
+                    <a href="/">
+                        <%= image_tag("logoimage.png",:class=>"pull-right",:id=>"logo-footer",:alt=>'')%>
+                        <!-- <img class="pull-right" id="logo-footer" src="assets/logoimage.png" alt=""> -->
+                    </a>
+                </div>
+            </div>
+        </div> 
+    </div><!--/copyright--> 
+    <!--=== End Copyright ===-->

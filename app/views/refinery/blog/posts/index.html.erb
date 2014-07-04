@@ -1,0 +1,203 @@
+<% content_for :body do %>
+  <%= raw @page.content_for(Refinery::Pages.default_parts.first.to_sym) if Refinery::Pages.default_parts.any? %>
+
+  <!-- <%# if @posts.any? %>
+    <section id="blog_posts">
+      <%#= render :partial => "/refinery/blog/shared/post", :collection => @posts %>
+      <%#= will_paginate @posts %>
+    </section>
+  <%# else %>
+    <p><%#= t('.no_blog_articles_yet') %></p>
+  <%# end %> -->
+<% end %>
+
+<% content_for :side_body_prepend do -%>
+  <%= raw @page.content_for(Refinery::Pages.default_parts.second.to_sym) %>
+<% end if Refinery::Pages.default_parts.many? -%>
+<%= render '/refinery/blog/shared/body_content_right' %>
+
+<%= render "/refinery/content_page" %>
+<%content_for :stylesheets, stylesheet_link_tag('refinery/blog/frontend') %> 
+<!--=== Content Part ===-->
+<div class="wrapper">
+    <div class="container content">   
+      <div class="row blog-page">    
+            <!-- Left Sidebar -->
+          <div class="col-md-9">
+                <!--Blog Post-->        
+              <div class="blog margin-bottom-40">
+                  
+                    <% if @posts.any? %>
+    <section id="blog_posts">
+      <%= render :partial => "/refinery/blog/shared/post", :collection => @posts %>
+      <div class="text-center">
+                    
+                       <%= will_paginate @posts %>
+                      </div> 
+      
+    </section>
+  <% else %>
+    <p><%= t('.no_blog_articles_yet') %></p>
+  <% end %>
+                    
+                </div>
+                <!--End Blog Post-->        
+
+                        
+                
+                <!--Pagination-->
+                <!-- <div class="text-center">
+                    <ul class="pagination">
+                        <li><a>«</a></li>
+                        <li><a>1</a></li>
+                        <li><a>2</a></li>
+                        <li class="active"><a>3</a></li>
+                        <li><a>4</a></li>
+                        <li><a>5</a></li>
+                        <li><a>6</a></li>
+                        <li><a>7</a></li>
+                        <li><a>8</a></li>
+                        <li><a>»</a></li>
+                    </ul>                                                            
+                </div> -->
+                <!--End Pagination-->
+            </div>
+            <!-- End Left Sidebar -->
+
+            <!-- Right Sidebar -->
+          <div class="col-md-3">
+                <!-- Social Icons -->
+                <div class="magazine-sb-social margin-bottom-20">
+                    <div class="headline headline-md"><h2>Connect Us</h2></div>
+
+                    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-like" data-href="http://www.facebook.com/koresol"
+data-width="50" data-layout="button_count" data-action="like"
+data-show-faces="true" data-share="false"></div>
+
+<a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=300&amp;pubid=ra-53673b1b32318341"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0"/></a>
+<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53673b1b32318341"></script>
+<!-- AddThis Button END -->
+                                        <div class="clearfix"></div>                
+                </div>
+                <!-- End Social Icons -->
+
+                <!-- Posts -->
+                <div class="posts margin-bottom-20">
+                    <div class="headline headline-md"><h2>Recent Posts</h2></div>
+
+                    <% if @posts.many? %>
+  
+  <!--changes by pavan start-->
+  
+  <ul id="blog_posts"  style="margin-left:0px; padding-left:0px;"  ><!--changes by pavan end-->
+    <% @posts.each do |blog_post| %>
+     
+      <li style="margin-left:0px; padding-left:0px;padding-top:10px; list-style-type:none;">
+        
+        <p><a><%= link_to blog_post.title, refinery.blog_post_path(blog_post) %></a></p>
+       
+      </li>
+
+    <% end %>
+  </ul>
+
+<% end %>
+                    
+                </div><!--/posts-->
+                <div class="posts margin-bottom-20">
+                    <div class="headline headline-md"><h2>Blogs Categories</h2></div>
+                    <% if @categories.any? %>
+  <!-- <h4><%#= t('.title') %></h4> -->
+  <ul id='categories' style="margin-left:0px; padding-left:0px;" >
+    <% @categories.each do |category| %>
+      <li<%= " class='selected'" if @category.present? and @category.id == category.id %> style="list-style-type:none;">
+        <%= link_to "#{category.title} (#{category.post_count})", refinery.blog_category_path(category) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+            </div>
+
+                <div class="posts margin-bottom-20">
+                  <div class="headline headline-md"><h2>Archives</h2></div>
+
+                    <%= blog_archive_widget %>
+                  </div>
+                <!-- End Posts -->
+
+              <!-- Tabs Widget -->
+              <div class="headline headline-md"><h2>Tabs Widget</h2></div>
+                <div class="tab-v2 margin-bottom-40">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#home-1">About Us</a></li>
+                        <li><a data-toggle="tab" href="#home-2">Quick Links</a></li>
+                    </ul>                
+                    <div class="tab-content">
+                        <div id="home-1" class="tab-pane active">
+                            <p>At koresol , we are committed to developing relationships with all our clients through the provision of high-technology consultancy and software solutions. Among our services, are well-designed blogging and video tutorial programs, addressing a range of topics across the BFS sector.</p>                        
+                        </div>
+                        <div id="home-2" class="tab-pane magazine-sb-categories">
+                            <div class="row">
+                                <ul class="list-unstyled col-xs-6">
+                                    <li><a href="/">Home Page</a></li>
+                                    <li><a href="/blog">Blog Home</a></li>
+                                    <li><a href="/about">About Page</a></li>
+                                    <li><a href="/video-trainings">Video Tutorials</a></li>
+                                    <li><a href="/contact">Contact Page</a></li>
+                                    <!-- <li><a>800+ Icons</a></li> -->
+                                </ul>                     
+                            </div>
+                        </div>
+                    </div>
+                </div>            
+                <!-- End Tabs Widget -->
+
+              <!-- Photo Stream -->
+              <div class="headline headline-md"><h2>Photo Stream</h2></div>
+                <ul class="list-unstyled blog-photos margin-bottom-30">
+                    <li><a>
+                       <%= image_tag("p1.png",:class=>"hover-effect",:alt=>'')%>
+                      </a></li>
+                    <li><a>
+                       <%= image_tag("p2.png",:class=>"hover-effect",:alt=>'')%>
+                      </a></li>
+                    <li><a>
+                       <%= image_tag("p3.png",:class=>"hover-effect",:alt=>'')%>
+                      </a></li>
+                    <li><a>
+                      <%= image_tag("p4.png",:class=>"hover-effect",:alt=>'')%>
+                      </a></li>
+                    <li><a>
+                      <%= image_tag("p5.png",:class=>"hover-effect",:alt=>'')%>
+                      </a></li>
+                    <li><a>
+                      <%= image_tag("p6.png",:class=>"hover-effect",:alt=>'')%>
+
+                      </a></li>
+                    <li><a>
+                      <%= image_tag("p7.png",:class=>"hover-effect",:alt=>'')%>
+
+                      </a></li>
+                    <li><a>
+                      <%= image_tag("p8.png",:class=>"hover-effect",:alt=>'')%>
+                      </a></li>
+                </ul>
+              
+                <!-- End Photo Stream -->
+            </div>
+            <!-- End Right Sidebar -->
+            
+        </div><!--/row-->        
+    </div><!--/container-->  
+    </div> 
+    <!--=== End Content Part ===-->

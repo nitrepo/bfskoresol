@@ -1,0 +1,23 @@
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+development:
+  adapter: mysql2
+  database: koresoldb
+  username: root
+  password: 02-host
+  host: localhost
+test:
+  adapter: mysql2
+  database: koresoldb
+  username: root
+  password: 02-host   
+  host: localhost
+production:
+  adapter: mysql2
+  database: koresoldb
+  username: koresol
+  password: koresol
+  host: 128.199.198.205

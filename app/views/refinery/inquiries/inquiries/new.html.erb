@@ -1,0 +1,93 @@
+<!--=== Content Part ===-->
+  
+    <div class="container content">
+
+    <iframe width="100%" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Runwal+Sanket,+Baner+Mahalunge+Road,+Swati+Park,+Pune,+Maharashtra&amp;aq=0&amp;oq=runwall+sankeyt%5C&amp;sll=20.983588,82.752628&amp;sspn=67.870599,73.300781&amp;ie=UTF8&amp;hq=Runwal+Sanket,&amp;hnear=Baner+Mahalunge+Rd,+Swati+Park,+Baner,+Pune,+Maharashtra+411045&amp;t=m&amp;ll=18.563628,73.775786&amp;spn=0.006295,0.006295&amp;output=embed"></iframe><br /><!-- <small><a href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Runwal+Sanket,+Baner+Mahalunge+Road,+Swati+Park,+Pune,+Maharashtra&amp;aq=0&amp;oq=runwall+sankeyt%5C&amp;sll=20.983588,82.752628&amp;sspn=67.870599,73.300781&amp;ie=UTF8&amp;hq=Runwal+Sanket,&amp;hnear=Baner+Mahalunge+Rd,+Swati+Park,+Baner,+Pune,+Maharashtra+411045&amp;t=m&amp;ll=18.563628,73.775786&amp;spn=0.006295,0.006295" style="color:#0000FF;text-align:left">View Larger Map</a></small> -->   
+      <div class="row margin-bottom-30">
+        <div class="col-md-9 mb-margin-bottom-30">
+                <div class="headline"><h2>Contact Form</h2></div>
+                <p>Get in touch with us. Just use the form below and we'll get back to you as soon as we can.</p><br />
+          <%= form_for [refinery, :inquiries, @inquiry] do |f| %>
+      <%= render :partial => "/refinery/admin/error_messages",
+                 :locals => {
+                   :object => @inquiry,
+                   :include_object_name => true
+                 } %>
+                    <!-- <label>Name</label> -->
+                    <div class="row margin-bottom-20">
+                        <div class="col-md-7 col-md-offset-0">
+                            <%= f.required_label :name, :class => 'placeholder-fallback' %>
+        <%= f.text_field :name, :class => 'form-control', :required => 'required',
+          :placeholder => t('name', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders %>
+                        </div>                
+                    </div>
+                    
+                    <!-- <label>Email <span class="color-red">*</span></label> -->
+                    <div class="row margin-bottom-20">
+                        <div class="col-md-7 col-md-offset-0">
+                            <%= f.required_label :email, :class => 'placeholder-fallback' %>
+        <%= f.email_field :email, :class => 'form-control', :required => 'required',
+          :placeholder => t('email', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders %>
+                        </div>                
+                    </div>
+
+                    <div class="row margin-bottom-20">
+                        <div class="col-md-7 col-md-offset-0">
+                            <% if Refinery::Inquiries.show_phone_number_field %>
+                            <%= f.label :phone, :class => 'placeholder-fallback' %>
+          <%= f.text_field :phone, :class => 'form-control',
+            :placeholder => t('phone', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders %>
+            <%end%>
+                             </div>                
+                    </div>
+                    
+                    <!-- <label>Message</label> -->
+                    <div class="row margin-bottom-20">
+                        <div class="col-md-11 col-md-offset-0">
+                            <%= f.required_label :message, :class => 'placeholder-fallback' %>
+        <%= f.text_area :message, :class=>"form-control", :rows => 8, :required => 'required',
+          :placeholder => t('message', :scope => 'activerecord.attributes.refinery/inquiries/inquiry') if Refinery::Inquiries.show_placeholders %>
+                        </div>                
+                    </div>
+                    
+                    <p><button type="submit" class="btn-u">Send Message</button>
+
+                    </p>
+                 <% end %>
+
+
+             
+            </div><!--/col-md-9-->
+            
+        <div class="col-md-3">
+              <!-- Contacts -->
+                <div class="headline"><h2>Contacts</h2></div>
+                <ul class="list-unstyled who margin-bottom-30">
+                    <li><a href="#"><i class="fa fa-home"></i>Runawal Sanket, Baner Road,Pune, India – 411 045</a></li>
+                    <li><a href="#"><i class="fa fa-envelope"></i>contact@koresol.com</a></li>
+                    <li><a href="#"><i class="fa fa-phone"></i>020 467 72556</a></li>
+                    <li><a href="www.koresol.com"><i class="fa fa-globe"></i>http://www.koresol.com</a></li>
+                </ul>
+
+              <!-- Business Hours -->
+                <div class="headline"><h2>Business Hours</h2></div>
+                <ul class="list-unstyled margin-bottom-30">
+                  <li><strong>Monday-Friday:</strong> 09am to 06pm</li>
+                  <li><strong>Saturday:</strong> 09am to 02pm</li>
+                  <li><strong>Sunday:</strong> Closed</li>
+                </ul>
+
+              <!-- Why we are? -->
+                <div class="headline"><h2>Why we are?</h2></div>
+                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.</p>
+                <ul class="list-unstyled">
+                  <li><i class="fa fa-check color-green"></i> Odio dignissimos ducimus</li>
+                  <li><i class="fa fa-check color-green"></i> Blanditiis praesentium volup</li>
+                  <li><i class="fa fa-check color-green"></i> Eos et accusamus</li>
+                </ul>
+            </div><!--/col-md-3-->
+        </div><!--/row-->        
+
+        
+    </div><!--/container-->   
+    <!--=== End Content Part ===-->

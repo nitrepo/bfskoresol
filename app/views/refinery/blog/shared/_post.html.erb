@@ -1,0 +1,60 @@
+
+
+<% if post.live? %>
+  <article class="blog_post" id="<%= dom_id(post) %>">
+    <header>
+      <h1><%= link_to post.title, refinery.blog_post_path(post) %></h1>
+      <section class='details'>
+        <div class="blog-post-tags">
+        <time datetime="<%=l post.published_at.to_date, :format => :default %>" class='fa fa-calendar'>
+          <%= t('created_at', :scope => 'refinery.blog.shared.posts', :when => l(post.published_at.to_date, :format => :short)) %>
+        </time>
+        <%= "#{t('by', :scope => 'refinery.blog.posts.show')} #{post.author.username}" if post.author.present? %>.
+
+        
+          <ul class="list-unstyled list-inline blog-tags">
+                            <li>
+                                <i class="fa fa-tags"></i> 
+                                <a href="/blog/categories/technology">Technology</a> 
+                                <a href="/blog/categories/bfs-domain">BFS Domain</a>
+                                <!-- <a href="#">Internet</a>
+                                <a href="#">Media</a> -->
+                            </li>
+                        </ul>                                                
+                    </div>
+        <% if (categories = post.categories.translated).any? %>
+          <aside class='filled_in'>
+            <%= t('filled_in', :scope => 'refinery.blog.posts.show') %>
+            <%=raw categories.collect { |category| link_to category.title, refinery.blog_category_path(category) }.to_sentence %>
+          </aside>
+        <% end %>
+        <% if (tags = post.tags).any? %>
+          <aside class='tagged'>
+            <%= t('tagged', :scope => 'refinery.blog.posts.show') %>
+            <%=raw tags.collect { |tag| link_to tag, refinery.blog_tagged_posts_path(tag.id, tag.name.parameterize) }.to_sentence %>
+          </aside>
+        <% end %>
+      </section>
+    </header>
+    <section class='clearfix'>
+      <% if blog_post_teaser_enabled? %>
+        <%= blog_post_teaser(post) %>
+      <% else %>
+        <%= post.body.html_safe %>
+      <% end %>
+    </section>
+    <footer>
+      <p>
+        <%# if blog_post_teaser_enabled? && post.custom_teaser.present? %>
+        <p style="padding-top:10px;">
+        <%= link_to t('read_more', :scope => 'refinery.blog.shared.posts'), refinery.blog_post_path(post),:class=>'btn-u btn-u-small' %></p>
+        <%# end %>
+      </p>
+      <% if Refinery::Blog::Post.comments_allowed? %>
+        <aside class='fa fa-comments'>
+          <%= link_to "#{t('title', :scope => 'refinery.blog.posts.show.comments')} (#{post.comments.approved.count})", refinery.blog_post_path(post) << '#comments' %>
+        </aside>
+      <% end %>
+    </footer>
+  </article>
+<% end %>

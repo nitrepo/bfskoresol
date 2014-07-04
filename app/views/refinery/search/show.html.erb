@@ -1,0 +1,225 @@
+
+<!--=== Content Part ===-->
+
+<!-- <div class="clearfix margin-bottom-30"></div> -->
+<% content_for :stylesheets, stylesheet_link_tag('refinery/blog/frontend') %>
+
+    
+        <p><% content_for :body_content_title do %>
+
+  <%= t('.search_results_for', :what => params[:query]) %>
+<% end %>
+
+<% content_for :body do %>
+  <% if @results.empty? %>
+  <h3>
+  <%= t('.no_results_for', :what => params[:query]) %><i class="color-gray fa fa-exclamation-triangle"></i>
+</h3>
+  <% else %>
+    <ul id="search_results">
+      <h1><i class="color-gray fa fa-filter"></i><a>Search Result</a></h1>
+      <% @results.each do |result| %>
+
+        <li style="list-style-type:none; border-bottom:1px solid #ccc; padding-bottom:10px;">
+          <span class='result_type'>
+           
+            <p><%= result_type result %></p>
+            
+          </span>
+          <%= link_to result_title(result).html_safe, result_url(result) %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+<% end %>
+
+<%#= render "/refinery/content_page" %>
+            <!-- End Left Sidebar -->
+
+            <!-- Right Sidebar -->
+       
+
+
+
+    <!--=== Search Block ===-->
+    
+    <div class="search-block">
+        <div class="container">
+            <div class="col-md-6 col-md-offset-3">
+
+              <h2>Search again</h2>
+              <%= form_tag refinery.search_path do -%>
+              <div class="input-group">
+                        <%= text_field_tag :query, {}, {:type => "search",
+                     :placeholder => "Search", :class=> "form-control",
+
+                     :value => (params[:query] if params[:query])} %>
+
+                          <span class="input-group-btn"><button type="submit" class="btn-u"><i class="fa fa-search"></i></button></span>
+                </div>
+                        <% end %>
+                
+                <!-- <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search words with regular expressions ...">
+                    <span class="input-group-btn">
+                        <button class="btn-u" type="button"><i class="fa fa-search"></i></button>
+                    </span>
+                </div> -->
+            </div>
+        </div>    
+    </div><!--/container-->     
+    <!--=== End Search Block ===-->
+
+    <!--=== Search Results ===-->
+    <div class="container s-results margin-bottom-50">
+        <div class="row">
+
+                      <div class="col-md-8">
+                <!-- <span class="results-number">About 384,907 results</span> -->
+                <!-- Begin Inner Results -->
+                <!-- <div class="inner-results">
+                    <h3><a >Web design</a></h3>
+                    <ul class="list-inline up-ul">
+                        <li>en.wikipedia.org/wiki/Web_design‎</li>
+                        <li class="btn-group">
+                            <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button">
+                                More<i class="fa fa-caret-down"></i>
+                                <span class="sr-only">Toggle Dropdown</span>                            
+                            </button>
+                            <ul role="menu" class="dropdown-menu">
+                                <li><a >Share</a></li>
+                                <li><a >Similar</a></li>
+                                <li><a >Advanced search</a></li>
+                            </ul>
+                        </li>
+                        <li><a >Wrapbootstrap</a></li>
+                        <li><a >Dribbble</a></li>
+                    </ul> -->
+                    <p><%= render "/refinery/content_page" %></p>
+                    <!-- <ul class="list-inline down-ul">
+                        <li>
+                            <ul class="list-inline star-vote">
+                                <li><i class="color-green fa fa-star"></i></li>
+                                <li><i class="color-green fa fa-star"></i></li>
+                                <li><i class="color-green fa fa-star"></i></li>
+                                <li><i class="color-green fa fa-star"></i></li>
+                                <li><i class="color-green fa fa-star-half-o"></i></li>
+                            </ul>
+                        </li>
+                        <li>3 years ago - By Anthon Brandley</li>
+                        <li>234,034 views</li>
+                        <li><a >Web designer</a></li>
+                    </ul>    
+                </div> -->
+                <!-- Begin Inner Results -->
+
+                    </div>
+            <div class="col-md-4 ">
+                
+
+                <div class="magazine-sb-social margin-bottom-20">
+                    <div class="headline headline-md"><h2>Connect Us</h2></div>
+
+                    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-like" data-href="http://www.facebook.com/koresol"
+data-width="50" data-layout="button_count" data-action="like"
+data-show-faces="true" data-share="false"></div>
+
+<a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=300&amp;pubid=ra-53673b1b32318341"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0"/></a>
+<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53673b1b32318341"></script>
+<!-- AddThis Button END -->
+                    
+                    <div class="clearfix"></div>                
+                </div>
+                <!-- End Social Icons -->
+
+                <!-- Posts -->
+                <div class="posts margin-bottom-20">
+                    <div class="headline headline-md"><h2>Recent Posts</h2></div>
+  <!--changes by pavan start-->
+  
+  <ul id="blog_posts"  style="margin-left:0px; padding-left:0px;"  ><!--changes by pavan end-->
+    <% @blog_posts.each do |blog_post| %>
+     
+      <li style="margin-left:0px; padding-left:0px;padding-top:10px; list-style-type:none;">
+        
+        <p><a ><%= link_to blog_post.title, refinery.blog_post_path(blog_post) %></a></p>
+       
+      </li>
+
+    <% end %>
+  </ul>
+                                    </div>
+
+              <!-- Tabs Widget -->
+              <div class="headline headline-md"><h2>Tabs Widget</h2></div>
+                <div class="tab-v2 margin-bottom-40">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#home-1">About Us</a></li>
+                        <li><a data-toggle="tab" href="#home-2">Quick Links</a></li>
+                    </ul>                
+                    <div class="tab-content">
+                        <div id="home-1" class="tab-pane active">
+                            <p>At koresol , we are committed to developing relationships with all our clients through the provision of high-technology consultancy and software solutions. Among our services, are well-designed blogging and video tutorial programs, addressing a range of topics across the BFS sector.</p>                        
+                        </div>
+                        <div id="home-2" class="tab-pane magazine-sb-categories">
+                            <div class="row">
+                                <ul class="list-unstyled col-xs-6">
+                                    <li><a href="/">Home Page</a></li>
+                                    <li><a href="/blog">Blog Home</a></li>
+                                    <li><a href="/about">About Page</a></li>
+                                    <li><a href="/video-trainings">Video Tutorials</a></li>
+                                    <li><a href="/contact">Contact Page</a></li>
+                                    <!-- <li><a >800+ Icons</a></li> -->
+                                </ul>                       
+                            </div>
+                        </div>
+                    </div>
+                </div>            
+                <!-- End Tabs Widget -->
+
+              <!-- Photo Stream -->
+              <div class="headline headline-md"><h2>Photo Stream</h2></div>
+                <ul class="list-unstyled blog-photos margin-bottom-30">
+                    <li><a >
+                       <%= image_tag("p1.png",:class=>"hover-effect",:alt=>'')%>
+                      </a></li>
+                    <li><a >
+                       <%= image_tag("p2.png",:class=>"hover-effect",:alt=>'')%>
+                      </a></li>
+                    <li><a >
+                       <%= image_tag("p3.png",:class=>"hover-effect",:alt=>'')%>
+                      </a></li>
+                    <li><a>
+                      <%= image_tag("p4.png",:class=>"hover-effect",:alt=>'')%>
+                      </a></li>
+                    <li><a >
+                      <%= image_tag("p5.png",:class=>"hover-effect",:alt=>'')%>
+                      </a></li>
+                    <li><a >
+                      <%= image_tag("p6.png",:class=>"hover-effect",:alt=>'')%>
+
+                      </a></li>
+                    <li><a >
+                      <%= image_tag("p7.png",:class=>"hover-effect",:alt=>'')%>
+
+                      </a></li>
+                    <li><a >
+                      <%= image_tag("p8.png",:class=>"hover-effect",:alt=>'')%>
+                      </a></li>
+                </ul>
+
+                </div>        
+            </div><!--/col-md-2-->
+</div></div>
+<!--/container-->     
+    <!--=== End Search Results ===--> 

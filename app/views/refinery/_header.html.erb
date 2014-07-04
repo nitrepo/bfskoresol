@@ -1,0 +1,289 @@
+<!-- <h1 id='logo'>
+  <%#= link_to Refinery::Core.site_name, refinery.root_path %>
+</h1>
+<%#= Refinery::Pages::MenuPresenter.new(refinery_menu_pages, self).to_html %>
+<%#= form_tag refinery.search_path do -%>
+  <%#= text_field_tag :query, {}, {:type => "search",
+                     :placeholder => "Search site for...", 
+                     :value => (params[:query] if params[:query])} %>
+  <%#= submit_tag 'Go' %>
+<%# end %> -->
+
+<script type="text/javascript">
+        $(function(){    
+        jQuery('.search').click(function () {
+            if(jQuery('.search-btn').hasClass('fa-search')){
+                jQuery('.search-open').fadeIn(500);
+                jQuery('.search-btn').removeClass('fa-search');
+                jQuery('.search-btn').addClass('fa-times');
+            } else {
+                jQuery('.search-open').fadeOut(500);
+                jQuery('.search-btn').addClass('fa-search');
+                jQuery('.search-btn').removeClass('fa-times');
+            }   
+        });
+
+    });
+</script>
+
+<script type="text/javascript">
+
+                var tpj=jQuery;
+                tpj.noConflict();
+
+                tpj(document).ready(function() {
+
+                if (tpj.fn.cssOriginal!=undefined)
+                    tpj.fn.css = tpj.fn.cssOriginal;
+
+                    var api = tpj('.fullwidthbanner').revolution(
+                        {
+                            delay:9000,
+                            startwidth:960,
+                            startheight:500,
+
+                            onHoverStop:"on",                       // Stop Banner Timet at Hover on Slide on/off
+
+                            thumbWidth:100,                         // Thumb With and Height and Amount (only if navigation Tyope set to thumb !)
+                            thumbHeight:50,
+                            thumbAmount:3,
+
+                            hideThumbs:0,
+                            navigationType:"bullet",                // bullet, thumb, none
+                            navigationArrows:"solo",                // nexttobullets, solo (old name verticalcentered), none
+
+                            navigationStyle:"round",                // round,square,navbar,round-old,square-old,navbar-old, or any from the list in the docu (choose between 50+ different item), custom
+
+
+                            navigationHAlign:"center",              // Vertical Align top,center,bottom
+                            navigationVAlign:"bottom",                  // Horizontal Align left,center,right
+                            navigationHOffset:30,
+                            navigationVOffset:-40,
+
+                            soloArrowLeftHalign:"left",
+                            soloArrowLeftValign:"center",
+                            soloArrowLeftHOffset:20,
+                            soloArrowLeftVOffset:0,
+
+                            soloArrowRightHalign:"right",
+                            soloArrowRightValign:"center",
+                            soloArrowRightHOffset:20,
+                            soloArrowRightVOffset:0,
+
+                            touchenabled:"on",                      // Enable Swipe Function : on/off
+
+
+                            stopAtSlide:-1,                         // Stop Timer if Slide "x" has been Reached. If stopAfterLoops set to 0, then it stops already in the first Loop at slide X which defined. -1 means do not stop at any slide. stopAfterLoops has no sinn in this case.
+                            stopAfterLoops:-1,                      // Stop Timer if All slides has been played "x" times. IT will stop at THe slide which is defined via stopAtSlide:x, if set to -1 slide never stop automatic
+
+                            hideCaptionAtLimit:0,                   // It Defines if a caption should be shown under a Screen Resolution ( Basod on The Width of Browser)
+                            hideAllCaptionAtLilmit:0,               // Hide all The Captions if Width of Browser is less then this value
+                            hideSliderAtLimit:0,                    // Hide the whole slider, and stop also functions if Width of Browser is less than this value
+
+
+                            fullWidth:"on",
+
+                            shadow:1                                //0 = no Shadow, 1,2,3 = 3 Different Art of Shadows -  (No Shadow in Fullwidth Version !)
+
+                        });
+
+
+                        // TO HIDE THE ARROWS SEPERATLY FROM THE BULLETS, SOME TRICK HERE:
+                        // YOU CAN REMOVE IT FROM HERE TILL THE END OF THIS SECTION IF YOU DONT NEED THIS !
+                            api.bind("revolution.slide.onloaded",function (e) {
+
+
+                                jQuery('.tparrows').each(function() {
+                                    var arrows=jQuery(this);
+
+                                    var timer = setInterval(function() {
+
+                                        if (arrows.css('opacity') == 1 && !jQuery('.tp-simpleresponsive').hasClass("mouseisover"))
+                                          arrows.fadeOut(300);
+                                    },3000);
+                                })
+
+                                jQuery('.tp-simpleresponsive, .tparrows').hover(function() {
+                                    jQuery('.tp-simpleresponsive').addClass("mouseisover");
+                                    jQuery('body').find('.tparrows').each(function() {
+                                        jQuery(this).fadeIn(300);
+                                    });
+                                }, function() {
+                                    if (!jQuery(this).hasClass("tparrows"))
+                                        jQuery('.tp-simpleresponsive').removeClass("mouseisover");
+                                })
+                            });
+                        // END OF THE SECTION, HIDE MY ARROWS SEPERATLY FROM THE BULLETS
+
+            });
+
+
+
+            </script>
+
+<div class="wrapper">
+    <!--=== Header ===-->    
+    <div class="header" >
+        <!-- Topbar -->
+        <div class="topbar">
+            <div class="container" >
+                <!-- Topbar Navigation -->
+                <ul class="loginbar pull-right">
+<!--                     <li>
+                        <i class="fa fa-globe"></i>
+                        <a>Languages</a>
+                        <ul class="lenguages">
+                            <li class="active">
+                                <a href="#">English <i class="fa fa-check"></i></a> 
+                            </li>
+                            <li><a href="#">Spanish</a></li>
+                            <li><a href="#">Russian</a></li>
+                            <li><a href="#">German</a></li>
+                        </ul>
+                    </li>
+                    <li class="topbar-devider"></li>   
+                    <li><a href="page_faq.html">Help</a></li>   -->
+                    <!-- <li class="topbar-devider"></li>    -->
+                    <!-- <li><a href="page_login.html">Login</a></li> --> 
+                    <li><div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-like" data-href="http://www.facebook.com/koresol"
+data-width="50" data-layout="button_count" data-action="like"
+data-show-faces="true" data-share="false"></div>
+</li>
+<li class="topbar-devider"></li>
+<li style="text-align:center;">
+<a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=300&amp;pubid=ra-53673b1b32318341"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0"/></a>
+<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53673b1b32318341"></script>
+</li>
+                    <li class="topbar-devider"></li>
+                    <i class="fa fa-user color-green"></i>
+                    <li><a>
+      <% if current_user %>
+        Logged in as <%= current_user.email %>.
+        <%= link_to "Log out", main_app.userlogout_path, :style=>"color:#4A8AC6; font-weight:bold;"%>
+      <% else %>
+        <%= link_to "Sign up", main_app.usersignup_path, :style=>"color:#4A8AC6; font-weight:bold;" %> or
+        <%= link_to "Log in", main_app.userlogin_path, :style=>"color:#4A8AC6; font-weight:bold;" %>.
+
+      <% end %>
+    </a></li>  
+                </ul>
+                <!-- End Topbar Navigation -->
+            </div>
+        </div>
+        <!-- End Topbar -->
+    
+        <!-- Navbar -->
+
+        <div class="navbar navbar-default" role="navigation">
+            <!-- <div class="container"> -->
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="fa fa-bars"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">
+                        <%= image_tag("logobfs.png", :alt=>"Logo",:Width=>'100%')%>
+                        <!-- <img id="logo-header" src="assets/logoimage.png" alt="Logo"> -->
+                    </a>
+                    <script>
+                            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) )
+                            {
+                            var theImg = document.getElementById('logoimg');
+                            theImg.src ='<%= asset_path 'logobfsmobo.png' %>'
+                            }
+                    </script>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div  class="collapse navbar-collapse navbar-responsive-collapse">
+                    <ul id = "myid" class="nav navbar-nav"  style="padding-left:10px;">
+                        <!-- Home -->
+                        <li >
+                        	
+                            <a href="/">
+                                Home
+                            </a>
+                            
+                        </li>
+                        <li >
+                            <a href="/about">
+                                About 	
+                            </a>
+                            
+                        </li>
+                        <li >
+                            <a href="/video-trainings">
+                                Videos
+                            </a>
+                            
+                        </li>
+                        <li >
+                            <a href="/blog">
+                                Blogs
+                            </a>
+                            
+                        </li>
+                        <li >
+                            <a href="/sensex">
+                                Global Stock Market
+                            </a>
+                            
+                        </li>
+                        <li >
+                            <a href="/contact">
+                                Contact
+                            </a>
+                            
+                        </li>
+
+                        <!-- End Home -->
+
+                        
+
+                        <!-- Search Block -->
+                        <li>
+                            <i class="search fa fa-search search-btn"></i>
+                            <div class="search-open">
+                            <div class="input-group animated fadeInDown">
+                                <%= form_tag refinery.search_path do -%>
+              <div class="input-group">
+                        <%= text_field_tag :query, {}, {:type => "search",
+                     :placeholder => "Search", :class=> "form-control",
+
+                     :value => (params[:query] if params[:query])} %>
+
+                          <span class="input-group-btn"><button type="submit" class="btn-u"><i class="fa fa-search"></i></button></span>
+                </div>
+                        <% end %>
+                        <!--                                     <input type="text" class="form-control" placeholder="Search">
+                                    <span class="input-group-btn">
+                                        <button class="btn-u" type="button">Go</button>
+ </span>-->                            
+                                </div>
+                            </div>    
+                        </li>
+                        <!-- End Search Block -->
+                    </ul>
+                </div><!--/navbar-collapse-->
+            </div>
+        </div>            
+        <!-- End Navbar -->
+    </div>
+    <!--=== End Header ===-->   
+    
+    
+</div>
+
+                    
