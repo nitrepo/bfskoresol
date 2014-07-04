@@ -5,10 +5,10 @@ gem 'rails', '3.2.17'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-group :development, :test do
-  gem 'sqlite3'
-end
-
+#group :development, :test do
+#  gem 'sqlite3'
+#end
+gem 'mysql2'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -28,7 +28,7 @@ end
 
 gem 'jquery-rails'
 gem "sorcery"
-gem 'mysql2'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -36,10 +36,10 @@ gem 'mysql2'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+ gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+ gem 'capistrano', '~> 2.15' 
 
 # To use debugger
 # gem 'debugger'
