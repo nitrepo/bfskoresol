@@ -1,13 +1,4 @@
-<!-- <h1 id='logo'>
-  <%#= link_to Refinery::Core.site_name, refinery.root_path %>
-</h1>
-<%#= Refinery::Pages::MenuPresenter.new(refinery_menu_pages, self).to_html %>
-<%#= form_tag refinery.search_path do -%>
-  <%#= text_field_tag :query, {}, {:type => "search",
-                     :placeholder => "Search site for...", 
-                     :value => (params[:query] if params[:query])} %>
-  <%#= submit_tag 'Go' %>
-<%# end %> -->
+
 
 <script type="text/javascript">
         $(function(){    
@@ -128,7 +119,8 @@
         <div class="topbar">
             <div class="container" >
                 <!-- Topbar Navigation -->
-                <ul class="loginbar pull-right">
+                <ul class="loginbar pull-right" style="padding-bottom:15px;">
+
 <!--                     <li>
                         <i class="fa fa-globe"></i>
                         <a>Languages</a>
@@ -145,7 +137,7 @@
                     <li><a href="page_faq.html">Help</a></li>   -->
                     <!-- <li class="topbar-devider"></li>    -->
                     <!-- <li><a href="page_login.html">Login</a></li> --> 
-                    <li><div id="fb-root"></div>
+                    <li><div class="loginbar pull-right" id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -154,9 +146,9 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<div class="fb-like" data-href="http://www.facebook.com/koresol"
+<li><div class="fb-like" style="padding-bottom:10px;" data-href="http://www.facebook.com/koresol"
 data-width="50" data-layout="button_count" data-action="like"
-data-show-faces="true" data-share="false"></div>
+data-show-faces="true" data-share="false"></div></li>
 </li>
 <li class="topbar-devider"></li>
 <li style="text-align:center;">

@@ -26,54 +26,14 @@
   <% end %>
                     
                 </div>
-                <!--End Blog Post-->        
-
-                        
                 
-                <!--Pagination-->
-                <!-- <div class="text-center">
-                    <ul class="pagination">
-                        <li><a>«</a></li>
-                        <li><a>1</a></li>
-                        <li><a>2</a></li>
-                        <li class="active"><a>3</a></li>
-                        <li><a>4</a></li>
-                        <li><a>5</a></li>
-                        <li><a>6</a></li>
-                        <li><a>7</a></li>
-                        <li><a>8</a></li>
-                        <li><a>»</a></li>
-                    </ul>                                                            
-                </div> -->
-                <!--End Pagination-->
             </div>
             <!-- End Left Sidebar -->
 
             <!-- Right Sidebar -->
           <div class="col-md-3">
                 <!-- Social Icons -->
-                <div class="magazine-sb-social margin-bottom-20">
-                    <div class="headline headline-md"><h2>Connect Us</h2></div>
-
-                    <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<div class="fb-like" data-href="http://www.facebook.com/koresol"
-data-width="50" data-layout="button_count" data-action="like"
-data-show-faces="true" data-share="false"></div>
-
-<a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=300&amp;pubid=ra-53673b1b32318341"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0"/></a>
-<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53673b1b32318341"></script>
-<!-- AddThis Button END -->
-                                        <div class="clearfix"></div>                
-                </div>
+                
                 <!-- End Social Icons -->
 
                 <!-- Posts -->
@@ -84,12 +44,12 @@ data-show-faces="true" data-share="false"></div>
   
   <!--changes by pavan start-->
   
-  <ul id="blog_posts"  style="margin-left:0px; padding-left:0px;"  ><!--changes by pavan end-->
+  <ul id="blog_posts"  style="margin-left:0px; padding-left:0px;"><!--changes by pavan end-->
     <% @posts.each do |blog_post| %>
      
       <li style="margin-left:0px; padding-left:0px; padding-top:10px; list-style-type:none;">
         
-        <p><a><%= link_to blog_post.title, refinery.blog_post_path(blog_post) %></a></p>
+        <p><u><a><%= link_to blog_post.title, refinery.blog_post_path(blog_post)%></a></u></p>
        
       </li>
 

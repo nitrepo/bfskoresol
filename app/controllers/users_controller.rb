@@ -10,7 +10,7 @@ def new
   def create
     @user = User.new(params[:user])
     if @user.save
-      redirect_to refinery.root_path, :notice => "Registration successful. Check your email for activation instructions."
+      redirect_to main_app.userlogin_path, :notice => "Registration successful. Check your email for activation instructions."
     else
       render :new
     end

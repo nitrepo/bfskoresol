@@ -8,14 +8,38 @@ iframe, object, embed {
 iframe{
   max-width: 100% !important;
 }
+    h3{padding-bottom: 5px;}
 </style>
 <!--changes by pavan end--> 
 
-
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script>
+$(function() {
+var icons = {
+header: "ui-icon-circle-arrow-e",
+activeHeader: "ui-icon-circle-arrow-s"
+};
+$( "#accordion" ).accordion({
+icons: icons,
+heightStyle: "content",
+collapsible: true
+});
+$( "#toggle" ).button().click(function() {
+if ( $( "#accordion" ).accordion( "option", "icons" ) ) {
+$( "#accordion" ).accordion( "option", "icons", null );
+} else {
+$( "#accordion" ).accordion( "option", "icons", icons );
+}
+});
+});
+</script>
     <div class="wrapper">            
-     <div class="container content">
+     <div class="container content" style="padding-top:35px;">
         <div class="row"><!-- Tab v2 -->  
-        <!-- <h2>This is heading for stock market</h2>
+        <!-- <h3>This is heading for stock market</h3>
  -->
 
 <!-- style="background-image: url('app/assets/images/us.png');"
@@ -24,9 +48,11 @@ iframe{
                 <div class="tab-v2">
                     <ul class="nav nav-tabs">
                         <li  class="active"><a href="#home-1" data-toggle="tab"><div style="float:left;"><%=image_tag('in.png')%></div><div style="float:left; padding-top:10px;padding-left:10px;"><span style="font-weight:bold; font-size:15px;">INDIA</span></div></a></li>
-                        <li><a href="#profile-1" data-toggle="tab"><div style="float:left;"><%=image_tag('uk.png')%></div><div style="float:left; padding-top:10px;padding-left:10px;"><span style="font-weight:bold; font-size:15px;">UK</span></div></a></li>
+                        
                         <li><a href="#messages-1" data-toggle="tab"><div style="float:left;"><%=image_tag('us.png')%></div><div style="float:left; padding-top:10px; padding-left:10px;"><span style="font-weight:bold; font-size:15px;">US</span></div></a></li>
-                        <li><a href="#settings-1" data-toggle="tab"><div style="float:left;"><%=image_tag('jp.png')%></div><div style="float:left; padding-top:10px; padding-left:10px;"><span style="font-weight:bold; font-size:15px;">JAPAN</span></div></a></li>
+
+                        <li><a href="#profile-1" data-toggle="tab"><div style="float:left;"><%=image_tag('uk.png')%></div><div style="float:left; padding-top:10px;padding-left:10px;"><span style="font-weight:bold; font-size:15px;">EUROPE</span></div></a></li>
+                        <li><a href="#settings-1" data-toggle="tab"><div style="float:left;"><%=image_tag('jp.png')%></div><div style="float:left; padding-top:10px; padding-left:10px;"><span style="font-weight:bold; font-size:15px;">ASIA</span></div></a></li>
                         <li><a href="#forex" data-toggle="tab">
                           <div style="float:left;"><%=image_tag('glob.png')%></div><div style="float:left; padding-top:10px; padding-left:10px;"><span style="font-weight:bold; font-size:15px;">RESOURCES</span></div></a></li>
                     </ul>                
@@ -40,52 +66,87 @@ iframe{
 src="http://www.indianotes.com/widgets/indices-ticker/index.php?type=indices-ticker&w=1100" width="100%" height="100" scrolling="no"></iframe>
 </div>
                           <div class="col-md-4">
-                            <h4>Stock exchange in India</h4>
+                            <h3>Indian Indices</h3>
                             
                             <p><script type="text/javascript">var _mcq=["6",""];</script><span id='_mc_mg6'></span><script language="JavaScript" src="http://stat1.moneycontrol.com/mcjs/common/mc_widget.js"></script><noscript><a href="http://www.moneycontrol.com">Sensex/Nifty</a></noscript></p>
                           </div>
                           <div class="col-md-4">
-                            <h4>Top gainers</h4>
+                            <h3>Gainers</h3>
                             <p>
                                <iframe src="http://www.appuonline.com/gadgets/gainers_g.html"
-                          height="422px" width="300px" frameborder="0" scrolling="no"></iframe>
+                          height="422px" width="300px" frameborder="0" scrolling="no">
+                        </iframe>
 
                             </p> 
                             </div>   
                              <div class="col-md-4">
-                            <h4>Top Losers</h4>
+                            <h3>Losers</h3>
                             <p>
                                <iframe src="http://www.appuonline.com/gadgets/losers_g.html"
 height="422px" width="300px" frameborder="0" scrolling="no"></iframe>
 
                             </p> 
-                            </div>  
+                            </div> 
+
                             <div class="col-md-6">
-                            <p> <a href="http://goldprice.org"> <img border=0 width='90%' src="http://goldprice.org/NewCharts/gold/images/gold_1d_g_m_INR.png"></a><br><a href="http://goldprice.org">gold price</a> charts provided by <a href="http://goldprice.org">goldprice.org</a></p>    
+                              <hr>
+                            <p> <a href="http://goldprice.org"> <img border=0 width='100%' src="http://goldprice.org/NewCharts/gold/images/gold_1d_g_m_INR.png"></a><br><a href="http://goldprice.org">gold price</a> charts provided by <a href="http://goldprice.org">goldprice.org</a></p>    
                             </div> 
                             <div class="col-md-6">
-                              <p><a href="http://silverprice.org"> <img border=0 width='90%' src="http://silverprice.org/charts/silver_1d_k_m_INR.png"></a><br><a href="http://silverprice.org">silver price</a> charts provided by <a href="http://silverprice.org">silverprice.org</a></p>
+                              <hr>
+                              <p><a href="http://silverprice.org"> <img border=0 width='100%' src="http://silverprice.org/charts/silver_1d_k_m_INR.png"></a><br><a href="http://silverprice.org">silver price</a> charts provided by <a href="http://silverprice.org">silverprice.org</a></p>
                               </div>
 
                         </div>
                       </div>
                         <div class="tab-pane fade in" id="profile-1">
-                            <div class="row">
+                            <div class="row" style="padding-top:40px;">
+                              <div class="col-md-4">
+                                <h3>Live Europ Equity Chart</h3>
+                              <iframe src="http://widgets.prorealtime.com/ProRealTime_FlashXLight/itcharts.phtml?wid=2014847285&k=fc9975675481eaac4141056204645d54" height="360" width ="100%" frameborder="0" scrolling="no"></iframe>
+                            </div>
+                            <div class="col-md-4">
+                              <h3>Top Movers UK</h3>
+                              <iframe src="http://widgets.prorealtime.com/ProRealTime_FlashQuotes/itcharts.phtml?wid=2014278988&k=7d5c77c6b9b13de63eed8fa97e0999d5" height="360" width ="100%" frameborder="0" scrolling="auto"></iframe>
+                            </div>
+                            <div class="col-md-4">
+                              <h3>European Market</h3>
+                              <iframe width="100%" height="360" style="margin-bottom:5px" src="http://widgets.howthemarketworks.com/private/WorldWatch300.aspx?market=european&amp;clientid=ad564882-1914-42b1-b6da-22de4b0d2608" frameborder="0" marginwidth="0" marginheight="0" scrolling="auto"></iframe>
+                            </div>
+                            <div class="col-md-4">
+                              <hr>
+                              <h3>Top Movers Switzerlands</h3>
+                              <iframe src="http://widgets.prorealtime.com/ProRealTime_FlashQuotes/itcharts.phtml?wid=2014584845&k=b4aa79a49df20b3dcbe58bb26828ea99" height="360" width ="100%" frameborder="0" scrolling="auto"></iframe>
+                            </div>
+                            <div class="col-md-4">
+                              <hr>
+                              <h3>Top Movers France</h3>
+                              <iframe src="http://widgets.prorealtime.com/ProRealTime_FlashQuotes/itcharts.phtml?wid=2014617235&k=d8515ec74c17f405badd08938114c0e9" height="360" width ="100%" frameborder="0" scrolling="auto"></iframe>
+                            </div>
+                            <div class="col-md-4">
+                              <hr>
+                              <h3>Top Movers Spain</h3>
+                              <iframe src="http://widgets.prorealtime.com/ProRealTime_FlashQuotes/itcharts.phtml?wid=2014290231&k=d1a014768a0bd94ec79f28d8983145be" height="360" width ="100%" frameborder="0" scrolling="auto"></iframe>
+                            </div>
                              <div class="col-md-6">
+                              <hr>
                               <p>
                                 <a href="http://goldprice.org"> <img border=0 width="100%" src="http://goldprice.org/NewCharts/gold/images/gold_1d_g_m_EUR.png"></a><br><a href="http://goldprice.org">gold price</a> charts provided by <a href="http://goldprice.org">goldprice.org</a>
                               </p>
                              </div>
                              <div class="col-md-6">
+                              <hr>
                              <p>
                               <a href="http://silverprice.org"> <img border=0 width="100%" src="http://silverprice.org/charts/silver_1d_k_m_EUR.png"></a><br><a href="http://silverprice.org">silver price</a> charts provided by <a href="http://silverprice.org">silverprice.org</a></p>
                              </div> 
                              <div class="col-md-6">
+                              <hr>
                              <p>
                               <a href="http://goldprice.org"> <img border=0 width="100%" src="http://goldprice.org/NewCharts/gold/images/gold_1d_g_m_GBP.png"></a><br><a href="http://goldprice.org">gold price</a> charts provided by <a href="http://goldprice.org">goldprice.org</a>
                              </p>
                            </div>
                            <div class="col-md-6">
+                            <hr>
                              <p>
                               <a href="http://silverprice.org"> <img border=0 width="100%" src="http://silverprice.org/charts/silver_1d_o_m_GBP.png"></a><br><a href="http://silverprice.org">silver price</a> charts provided by <a href="http://silverprice.org">silverprice.org</a>
                              </p>
@@ -93,18 +154,21 @@ height="422px" width="300px" frameborder="0" scrolling="no"></iframe>
                             </div>
                         </div>
                         <div class="tab-pane fade in" id="messages-1">
-                            <div class="row">
-                              <div class="col-md-12">
+                            <div class="row" style="padding-top:40px;">
+                              <div class="col-md-4">
+                              
+                              <h3>Real Time Chart</h3>
                               <!-- TradingView Widget BEGIN -->
 <script type="text/javascript" src="https://d33t3vvu2t2yu5.cloudfront.net/tv.js"></script>
 <script type="text/javascript">
 new TradingView.widget({
-  "autosize": true,
+  "width": 340,
+  "height": 400,
   "symbol": "FX:SPX500",
-  "interval": "1",
-  "timezone": "EST",
+  "interval": "D",
+  "timezone": "exchange",
   "theme": "White",
-  "style": "2",
+  "style": "1",
   "toolbar_bg": "#f1f3f6",
   "allow_symbol_change": true,
   "hideideas": true,
@@ -114,9 +178,10 @@ new TradingView.widget({
 });
 </script>
 <!-- TradingView Widget END -->
+
 </div>
                                 <div class="col-md-4">
-                            <h4>Heading Sample 3</h4>
+                            <h3>Market Overview</h3>
                             <p><div id="tv-miniwidget-08e72"></div>
 <script type="text/javascript" src="https://d33t3vvu2t2yu5.cloudfront.net/tv.js"></script>
 <script type="text/javascript">
@@ -235,162 +300,164 @@ new TradingView.MiniWidget({
         
         <div class="col-md-4">
           <!--pavan bhute-->
-            <h4>US Che Top Movers</h4>
+            <h3>Top Movers</h3>
         <p><iframe src="http://widgets.prorealtime.com/ProRealTime_FlashQuotes/itcharts.phtml?wid=2014578881&k=a0e519777b86509ec1c841219f1f3d8d" height="400" width ="100%" frameborder="0" scrolling="auto"></iframe></p>     
         </div>
-        <div class="col-md-4">
-          <h4>US Forex Chart</h4>
-        <p><iframe src="http://widgets.prorealtime.com/ProRealTime_FlashXLight/itcharts.phtml?wid=2014104953&k=9b96e70386a3924559ab8e9d380e0746" height="400" width ="100%" frameborder="0" scrolling="auto"></iframe></p>
-        </div>
+        
         <div class="col-md-6">
-          <h4>US Che Gold Price</h4>
+          <hr>
           <p> <a href="http://goldprice.org"> <img border=0 width="100%" src="http://goldprice.org/NewCharts/gold/images/gold_1d_g_m_USD.png"></a><br><a href="http://goldprice.org">gold price</a> charts provided by <a href="http://goldprice.org">goldprice.org</a></p>
           </div>
           <div class="col-md-6">
-            <h4>US Silver Price</h4>
+            <hr>
           <p><a href="http://silverprice.org"> <img border=0 width="100%" src="http://silverprice.org/charts/silver_1d_k_m_USD.png"></a><br><a href="http://silverprice.org">silver price</a> charts provided by <a href="http://silverprice.org">silverprice.org</a> </p>
           </div>
                         </div>
                         </div>
                         <div class="tab-pane fade in" id="settings-1">
-                          <div class="row">
+                          <div class="row" style="padding-top:40px;">
+
+                            <div class="col-md-4" style="margin-left:40px;">
+                              <h3>Asian Market</h3>
+                               <iframe width="340" height="300" style="margin-bottom:5px" src="http://widgets.howthemarketworks.com/private/WorldWatch300.aspx?market=asian&amp;clientid=36e9647f-7eba-4084-be17-81bac3615d8d" frameborder="0" marginwidth="0" marginheight="0" scrolling="auto"></iframe>
+                            </div>
+                            
+                            
                             <div class="col-md-6">
-                            <h4>Heading Sample 4</h4>
-                            <p><a href="http://goldprice.org"> <img border=0 src="http://goldprice.org/NewCharts/gold/images/gold_1d_g_m_JPY.png"></a><br><a href="http://goldprice.org">gold price</a> charts provided by <a href="http://goldprice.org">goldprice.org</a></p>
+                              <a href="http://goldprice.org"> <img border=0 width="100%" src="http://goldprice.org/NewCharts/gold/images/gold_1d_g_m_HKD.png"></a><br><a href="http://goldprice.org">gold price</a> charts provided by <a href="http://goldprice.org">goldprice.org</a>
+                            </div>
+                            
+                            <div class="col-md-6">
+                              <hr>
+                              <a href="http://silverprice.org"> <img border=0 width="100%" src="http://silverprice.org/charts/silver_1d_k_m_HKD.png"></a><br><a href="http://silverprice.org">silver price</a> charts provided by <a href="http://silverprice.org">silverprice.org</a>
+                            </div>
+                            
+                            <div class="col-md-6">
+                              <hr>
+                          <a href="http://goldprice.org"> <img border=0 width="100%" src="http://goldprice.org/NewCharts/gold/images/gold_1d_g_m_SGD.png"></a><br><a href="http://goldprice.org">gold price</a> charts provided by <a href="http://goldprice.org">goldprice.org</a>
                           </div>
+                          
+                            <div class="col-md-6">
+                            <hr>
+                            <p><a href="http://goldprice.org"> <img border=0 width="100%" src="http://goldprice.org/NewCharts/gold/images/gold_1d_g_m_JPY.png"></a><br><a href="http://goldprice.org">gold price</a> charts provided by <a href="http://goldprice.org">goldprice.org</a></p>
+                          </div>
+                        
                           <div class="col-md-6">
-                            <h4>Heading Sample 4</h4>
-                          <a href="http://silverprice.org"> <img border=0 src="http://silverprice.org/charts/silver_1d_k_m_JPY.png"></a><br><a href="http://silverprice.org">silver price</a> charts provided by <a href="http://silverprice.org">silverprice.org</a>
+                           <hr> 
+                          <a href="http://silverprice.org"> <img border=0 width="100%" src="http://silverprice.org/charts/silver_1d_k_m_JPY.png"></a><br><a href="http://silverprice.org">silver price</a> charts provided by <a href="http://silverprice.org">silverprice.org</a>
                         </div>
+
+                          
+
+
                         </div>
                         </div>
                         <div class="tab-pane fade in" id="forex">
-                          <div class="row">
-                                    <!--accordian by pavan start-->
+                                  <!--accordian by pavan start-->
 
-        <div class="col-md-12">
-                <!-- Accordion v1 -->                
-                <div class="panel-group acc-v1" id="accordion-1">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-One">
-                                    Calculaters
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapse-One" class="panel-collapse collapse ">
-                            <div class="panel-body">
-                                <div class="row">
-                                    
-
-                             <div class="col-md-5">
-                              <iframe frameborder="0" scrolling="auto" height="425" width="100%" allowtransparency="true" marginwidth="0" marginheight="0" src="http://tools.investing.com/margin-calculator/index.php?acc=12&pair=1"></iframe><br /><div style="width:450"><a href="http://www.investing.com" target="_blank"><img src="http://c1802182.cdn.cloudfiles.rackspacecloud.com/forexpros_en_logo.png" alt="Investing.com" title="Investing.com" style="float:left" /></a><span style="float:right"><span style="font-size: 11px;color: #333333;text-decoration: none;">The Margin Calculator is powered by <a href="http://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a></span></span></div>
-                              
-                            </div>
-                            <div class="col-md-6">
-                              <iframe frameborder="0" scrolling="auto" height="450" width="100%" allowtransparency="true" marginwidth="0" marginheight="0" src="http://tools.investing.com/profit-calculator/index.php?acc=12&pair=1"></iframe><br /><div style="width:450"><span style="float:left"><span style="font-size: 11px;color: #333333;text-decoration: none;">The Profit Calculator is powered by <a href="http://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a>.</span></span></div>
-                              
-                            </div>
-
-                            <div class="col-md-3">
-                              <!-- <h4>Heading Sample 3</h4> -->
-                              <iframe frameborder="0" scrolling="auto" height="375" width="100%"
-allowtransparency="true" marginwidth="0" marginheight="0"
-src="http://tools.investing.com/currency-converter/index.php?from=183&to=12"></iframe><br /><table width="197"><tr><td><span style="font-size: 11px;color: #333333;text-decoration: none;">The Currency Converter is powered by <a href="http://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a></span></td></tr></table>
-
-                           </div>
-                            <div class="col-md-6">
-                              <iframe frameborder="0" scrolling="auto" height="640" width="100%" allowtransparency="true" marginwidth="0" marginheight="0" src="http://tools.investing.com/pip-calculator/index.php?acc=12"></iframe><br /><div style="width:450"><span style="float:left"><span style="font-size: 11px;color: #333333;text-decoration: none;">The Pip Calculator is powered by <a href="http://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a></span></span></div>
-                              
-                            </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-Two">
-                                    Collapsible Group Item #2
-                                </a>
-                            </h4>
-                        </div>
-                        <div id="collapse-Two" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</p>
-                                        <ul class="list-unstyled">
-                                            <li><i class="fa fa-check color-green"></i> Donec id elit non mi porta gravida at eget metus..</li>
-                                            <li><i class="fa fa-check color-green"></i> Fusce dapibus, tellus ac cursus comodo egetine..</li>
-                                            <li><i class="fa fa-check color-green"></i> Food truck quinoa nesciunt laborum eiusmod runch..</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <img class="img-responsive" src="assets/img/main/6.jpg" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-        <!--accordian by pavan end-->
-                            <div class="col-md-6">
-                              <h4>Exchange Rates Table</h4>
-                              <p>
-                                <iframe frameborder="0" scrolling="auto" height="332" width="100%" allowtransparency="true" marginwidth="0" marginheight="0" src="http://indrates.investing.com/index.php?pairs_ids=169;166;20;170;172;27;167;175;168;174;177;176;178;179;&header-text-color=%23FFFFFF&curr-name-color=%230059b0&inner-text-color=%23000000&green-text-color=%232A8215&green-background=%23B7F4C2&green-background=%23B7F4C2&red-text-color=%23DC0001&red-background=%23FFE2E2&inner-border-color=%23CBCBCB&border-color=%23cbcbcb&bg1=%23F6F6F6&bg2=%23ffffff&open=show&last_update=hide"></iframe><br /><span style="font-size: 11px;color: #333333;text-decoration: none;">Live World Indices are powered by <a href="http://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a></span>
-                                
-                              </p>
-
-                              <h4>
-                                  Indices Quotes Widget</h4>
-                              <iframe frameborder="0" scrolling="auto" height="175" width="100%" allowtransparency="true" marginwidth="0" marginheight="0" src="http://fxrates.investing.com/index_exchange.php?params&inner-border-color=%23CBCBCB&border-color=%23cbcbcb&bg1=%23F6F6F6&bg2=%23ffffff&inner-text-color=%23000000&currency-name-color=%23000000&header-text-color=%23FFFFFF" align="center"></iframe><br /><div style="width:540px"><a href="http://www.investing.com" target="_blank"><img src="http://c1802182.cdn.cloudfiles.rackspacecloud.com/forexpros_en_logo.png" alt="Investing.com" title="Investing.com" style="float:left" /></a><span style="float:right"><span style="font-size: 11px;color: #333333;text-decoration: none;">The Exchange Rates are powered by <a href="http://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a>.</span></span></div>
-                            </div>
-                             <div class="col-md-6">
-                              <h4>Stock Quotes</h4>
+                                  
+<div id="accordion">
+    <h3>Leading Stock and Commodities</h3>
+        <div class="row">
+            <!-- <div class="col-md-12">
+                      <h3> Global Market Search</h3>
+                      <script type="text/javascript" src="http://widgets.macroaxis.com/widgets/url.jsp?t=14" window.open("","")></script>
+                    </div> -->
+                        <div class="col-md-6">
+                              <h3> Leading Stock Quotes</h3>
                               <p>
 
-                                <iframe frameborder="0" scrolling="auto" height="570" width="550" allowtransparency="true" marginwidth="0" marginheight="0" src="http://eqrates.investing.com/index.php?pairs_ids=277;347;6408;243;282;346;396;238;284;247;240;260;241;271;394;352;6974;7888;26490;8193;308;6369;280;301;251;8082;267;8177;287;272;252;8115;409;402;305;651;295;474;469;667;7997;7992;&header-text-color=%23FFFFFF&curr-name-color=%230059b0&inner-text-color=%23000000&green-text-color=%232A8215&green-background=%23B7F4C2&red-text-color=%23DC0001&red-background=%23FFE2E2&inner-border-color=%23CBCBCB&border-color=%23cbcbcb&bg1=%23F6F6F6&bg2=%23ffffff&last_update=hide"></iframe><div style="width:559px;"><span><span style="font-size: 11px;color: #333333;text-decoration: none;">Leading Stock Quotes powered by <a href="http://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a></span></span></div>  
+                                <iframe frameborder="0" scrolling="auto" height="552" width="550" allowtransparency="true" marginwidth="0" marginheight="0" src="http://eqrates.investing.com/index.php?pairs_ids=277;347;6408;243;282;346;396;238;284;247;240;260;241;271;394;352;6974;7888;26490;8193;308;6369;280;301;251;8082;267;8177;287;272;252;8115;409;402;305;651;295;474;469;667;7997;7992;&header-text-color=%23FFFFFF&curr-name-color=%230059b0&inner-text-color=%23000000&green-text-color=%232A8215&green-background=%23B7F4C2&red-text-color=%23DC0001&red-background=%23FFE2E2&inner-border-color=%23CBCBCB&border-color=%23cbcbcb&bg1=%23F6F6F6&bg2=%23ffffff&last_update=hide"></iframe><div style="width:559px;"><span><span style="font-size: 11px;color: #333333;text-decoration: none;">Leading Stock Quotes powered by <a href="http://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a></span></span></div>  
                               </p>
                              </div>
                             
 
                             
-                            <!-- <div class="col-md-6">
-                              
-                              <iframe frameborder="0" scrolling="no" height="375" width="197" allowtransparency="true" marginwidth="0" marginheight="0" src="http://tools.investing.com/currency-converter/index.php?from=17&to=12"></iframe><br /><table width="197"><tr><td><span style="font-size: 11px;color: #333333;text-decoration: none;">The Currency Converter is powered by <a href="http://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a></span></td></tr></table>
-
- 
-                            </div>
+                            
                             <div class="col-md-6">
-                              <iframe frameborder="0" scrolling="no" height="375" width="197" allowtransparency="true" marginwidth="0" marginheight="0" src="http://tools.investing.com/currency-converter/index.php?from=17&to=12"></iframe><br /><table width="197"><tr><td><span style="font-size: 11px;color: #333333;text-decoration: none;">The Currency Converter is powered by <a href="http://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a></span></td></tr></table>
-                              
-                            </div> -->
-                            <div class="col-md-6">
+                              <h3>Commodities</h3>
                             <iframe frameborder="0" scrolling="auto" height="552" width="100%" allowtransparency="true" marginwidth="0" marginheight="0" src="http://comrates.investing.com/index.php?pairs_ids=8830;8831;8832;8833;8834;8836;8848;8849;8851;8860;8861;8862;8869;8883;8891;8894;8910;8911;8912;8914;8915;8916;8917;8918;8988;&header-text-color=%23FFFFFF&curr-name-color=%230059b0&inner-text-color=%23000000&green-text-color=%232A8215&green-background=%23B7F4C2&red-text-color=%23DC0001&red-background=%23FFE2E2&inner-border-color=%23CBCBCB&border-color=%23cbcbcb&bg1=%23F6F6F6&bg2=%23ffffff&open=hide&last_update=hide"></iframe><br /><span style="font-size: 11px;color: #333333;text-decoration: none;">Commodities are powered by <a href="http://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a></span>    
                               
                             </div>
-                            
+
+        </div>
+<h3>News and Economic Calendar</h3>
+<div class="row">
+                          <div class="col-md-6">
+                            <h3>NEWS</h3>
+                            <script src="http://nmp.newsgator.com/NGBuzz/buzz.ashx?buzzId=81548&apiToken=9C4B229F9EA045939B9758E48447F327&trkP=&trkM=60C8F4BB-C857-ECFB-61C5-8C02A4810CFB" type="text/javascript"></script>
+                          </div>
+                          <div class="col-md-6">
+                              <h3>ECONOMIC CALENDAR</h3>
+                             <iframe src="http://ec.forexprostools.com?columns=exc_flags,exc_currency,exc_importance,exc_actual,exc_forecast,exc_previous&category=_employment,_economicActivity,_inflation,_credit,_centralBanks,_confidenceIndex,_balance,_Bonds&importance=1,2,3&features=datepicker,timezone&countries=25,32,6,37,72,22,17,39,14,48,10,35,7,43,60,36,110,11,26,12,4,5&calType=week&timeZone=8&lang=1" width="550" height="430" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe><div class="poweredBy"><span style="font-size: 11px;color: #333333;text-decoration: none;">Real Time Economic Calendar provided by <a href="http://www.Investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a>.</span></div> 
+                              
+                            </div>
+</div>
+<h3>Live World Indices amd Technical Analysis</h3>
+<div class="row"> 
+                              <div class="col-md-6">
+                              <h3>Live World Indices</h3>
+                              <p>
+                                <iframe frameborder="0" scrolling="auto" height="175" width="100%" allowtransparency="true" marginwidth="0" marginheight="0" src="http://indrates.investing.com/index.php?pairs_ids=169;166;20;170;172;27;167;175;168;174;177;176;178;179;&header-text-color=%23FFFFFF&curr-name-color=%230059b0&inner-text-color=%23000000&green-text-color=%232A8215&green-background=%23B7F4C2&green-background=%23B7F4C2&red-text-color=%23DC0001&red-background=%23FFE2E2&inner-border-color=%23CBCBCB&border-color=%23cbcbcb&bg1=%23F6F6F6&bg2=%23ffffff&open=show&last_update=hide"></iframe><br /><span style="font-size: 11px;color: #333333;text-decoration: none;">Live World Indices are powered by <a href="http://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a></span>
+                                
+                              </p>
+                            </div>
+
+                             
+
+                              <div class="col-md-6">
+                              <h3>
+                                  Indices Quotes Widget</h3>
+                                  <p>
+                              <iframe frameborder="0" scrolling="auto" height="175" width="100%" allowtransparency="true" marginwidth="0" marginheight="0" src="http://fxrates.investing.com/index_exchange.php?params&inner-border-color=%23CBCBCB&border-color=%23cbcbcb&bg1=%23F6F6F6&bg2=%23ffffff&inner-text-color=%23000000&currency-name-color=%23000000&header-text-color=%23FFFFFF" align="center"></iframe><br /><div style="width:540px"><a href="http://www.investing.com" target="_blank"><img src="http://c1802182.cdn.cloudfiles.rackspacecloud.com/forexpros_en_logo.png" alt="Investing.com" title="Investing.com" style="float:left" /></a><span style="float:right"><span style="font-size: 11px;color: #333333;text-decoration: none;">The Exchange Rates are powered by <a href="http://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a>.</span></span></div></p>
+                            </div>
                             <div class="col-md-6">
-                              
-                             <iframe src="http://ec.forexprostools.com?columns=exc_flags,exc_currency,exc_importance,exc_actual,exc_forecast,exc_previous&category=_employment,_economicActivity,_inflation,_credit,_centralBanks,_confidenceIndex,_balance,_Bonds&importance=1,2,3&features=datepicker,timezone&countries=25,32,6,37,72,22,17,39,14,48,10,35,7,43,60,36,110,11,26,12,4,5&calType=week&timeZone=8&lang=1" width="550" height="552" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe><div class="poweredBy"><span style="font-size: 11px;color: #333333;text-decoration: none;">Real Time Economic Calendar provided by <a href="http://www.Investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a>.</span></div> 
+                              <hr>
+                              <h3>Technical Analysis</h3>
+                              <iframe frameborder="0" scrolling="auto" height="280" width="360" allowtransparency="true" marginwidth="0" marginheight="0" src="http://tools.investing.com/technical_summary.php?pairs=2,3,4,8830,8836,8910&curr-name-color=%230059B0&fields=5m,1d"></iframe><br /><div style="width:345px;"><span style="float:left"><span style="font-size: 11px;color: #333333;text-decoration: none;">This Technical Analysis is powered by <a href="http://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a></span></span></div>
+                            </div>
+</div>
+<h3>Calculators</h3>
+<div class="row">
+                              <div class="col-md-6">
+                              <h3>Margin Calculator</h3>
+                              <iframe frameborder="0" scrolling="auto" height="425" width="100%" allowtransparency="true" marginwidth="0" marginheight="0" src="http://tools.investing.com/margin-calculator/index.php?acc=12&pair=1"></iframe><br /><div style="width:450"><a href="http://www.investing.com" target="_blank"><img src="http://c1802182.cdn.cloudfiles.rackspacecloud.com/forexpros_en_logo.png" alt="Investing.com" title="Investing.com" style="float:left" /></a><span style="float:right"><span style="font-size: 11px;color: #333333;text-decoration: none;">The Margin Calculator is powered by <a href="http://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a></span></span></div>
                               
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
+                              <h3>Profit Calculator</h3>
+                              <iframe frameborder="0" scrolling="auto" height="425" width="100%" allowtransparency="true" marginwidth="0" marginheight="0" src="http://tools.investing.com/profit-calculator/index.php?acc=12&pair=1"></iframe><br /><div style="width:450"><span style="float:left"><span style="font-size: 11px;color: #333333;text-decoration: none;">The Profit Calculator is powered by <a href="http://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a>.</span></span></div>
                               
-                              <iframe src="http://tsw.forexprostools.com?&forex=1,2,3,5,7,9,10&commodities=8830,8836,8831,8849,8833,8862,8832&indices=169,20,166,172,27,167,178&stocks=6408,6369,243,267,7888,284,8090&tabs=1,2,3,4" width="317" height="467"></iframe><div class="poweredBy"><span style="font-size: 11px;color: #333333;text-decoration: none;">Technical Summary Widget Powered by <a href="http://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a></span></div> 
                             </div>
-                            <!-- <div class="col-md-4">
-                          <h4>Market Quotes Widget</h4>
-                          <p> 
+
                             
-                            <iframe frameborder="0" scrolling="" height="287" width="300" allowtransparency="true" marginwidth="0" marginheight="0" src="http://tools.investing.com/market_quotes.php?tab_1=2,3,6,7,9,11&tab_2=169,166,20,172,27,178&tab_3=8830,8849,8836,8862,8831,8988&tab_4=8880,8907,8900,8899,8886,8895&select_color=000000&default_color=0059B0"> </iframe><br /><div style="width:300"><span style="font-size: 11px;color: #333333;text-decoration: none;">Market Quotes are powered by <a href="http://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a></span></div>
-                          </p> 
+                            
+              
+                            
+                            
+            <div class="col-md-7">
+                              <hr>
+                              <h3>Pip Calculator</h3>
+                              
+                              <iframe frameborder="0" scrolling="auto" height="640" width="100%" allowtransparency="true" marginwidth="0" marginheight="0" src="http://tools.investing.com/pip-calculator/index.php?acc=12"></iframe><br /><div style="width:450"><span style="float:left"><span style="font-size: 11px;color: #333333;text-decoration: none;">The Pip Calculator is powered by <a href="http://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a></span></span></div>
+                              
+                            </div>
+                            <div class="col-md-4" >
+                              <hr>
+                              <h3>Currency Converter</h3>
+                              
+                              <iframe frameborder="0" scrolling="auto" height="375" width="auto"
+allowtransparency="true" marginwidth="0" marginheight="0"
+src="http://tools.investing.com/currency-converter/index.php?from=183&to=12"></iframe><br /><table width="197"><tr><td><span style="font-size: 11px;color: #333333;text-decoration: none;">The Currency Converter is powered by <a href="http://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a></span></td></tr></table>
+
+            </div>
                           
-                        </div> -->
+
+        </div>
+
+                                  <!--accordian by pavan end-->
+                            
+                            
                             
                           </div>
                         </div>
