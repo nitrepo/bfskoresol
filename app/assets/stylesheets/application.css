@@ -17,7 +17,11 @@
 
  */
 
- 
+ /*Import Google Font*/
+@import url(//fonts.googleapis.com/css?family=Open+Sans:300,400);
+
+/*Reset Styles
+------------------------------------*/
  
  .addthis_header a :hover{
 	 						background-color:#ccc;
@@ -110,11 +114,7 @@ nav ul, ol {
  * Website: http://htmlstream.com
 */
 
-/*Import Google Font*/
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400);
 
-/*Reset Styles
-------------------------------------*/
 * {
    border-radius: 0 !important;
 }
