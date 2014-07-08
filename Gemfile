@@ -28,7 +28,7 @@ end
 
 gem 'jquery-rails'
 gem "sorcery"
-
+gem "font-awesome-rails"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
