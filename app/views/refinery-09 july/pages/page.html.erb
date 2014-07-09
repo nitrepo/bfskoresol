@@ -1,0 +1,124 @@
+
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script>
+$(function() {
+var icons = {
+header: "ui-icon-circle-arrow-e",
+activeHeader: "ui-icon-circle-arrow-s"
+};
+$( "#accordion" ).accordion({
+icons: icons,
+heightStyle: "content",
+collapsible: true
+});
+$( "#toggle" ).button().click(function() {
+if ( $( "#accordion" ).accordion( "option", "icons" ) ) {
+$( "#accordion" ).accordion( "option", "icons", null );
+} else {
+$( "#accordion" ).accordion( "option", "icons", icons );
+}
+});
+});
+</script>
+<div class="container content">
+        <div class="row">
+            <!-- Begin Sidebar Menu -->
+            <div class="col-md-12">
+<div id="accordion">
+    <h3>Section 01</h3>
+        <div class="row">
+            <div class="col-md-12">
+                      <h3> Global Market Search</h3>
+                      <script type="text/javascript" src="http://widgets.macroaxis.com/widgets/url.jsp?t=14" target="_blank" ></script>
+                    </div>
+                        <div class="col-md-6">
+                              <h3> Leading Stock Quotes</h3>
+                              <p>
+
+                                <iframe frameborder="0" scrolling="auto" height="552" width="550" allowtransparency="true" marginwidth="0" marginheight="0" src="http://eqrates.investing.com/index.php?pairs_ids=277;347;6408;243;282;346;396;238;284;247;240;260;241;271;394;352;6974;7888;26490;8193;308;6369;280;301;251;8082;267;8177;287;272;252;8115;409;402;305;651;295;474;469;667;7997;7992;&header-text-color=%23FFFFFF&curr-name-color=%230059b0&inner-text-color=%23000000&green-text-color=%232A8215&green-background=%23B7F4C2&red-text-color=%23DC0001&red-background=%23FFE2E2&inner-border-color=%23CBCBCB&border-color=%23cbcbcb&bg1=%23F6F6F6&bg2=%23ffffff&last_update=hide"></iframe><div style="width:559px;"><span><span style="font-size: 11px;color: #333333;text-decoration: none;">Leading Stock Quotes powered by <a href="http://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a></span></span></div>  
+                              </p>
+                             </div>
+                            
+
+                            
+                            
+                            <div class="col-md-6">
+                              <h3>Commodities</h3>
+                            <iframe frameborder="0" scrolling="auto" height="552" width="100%" allowtransparency="true" marginwidth="0" marginheight="0" src="http://comrates.investing.com/index.php?pairs_ids=8830;8831;8832;8833;8834;8836;8848;8849;8851;8860;8861;8862;8869;8883;8891;8894;8910;8911;8912;8914;8915;8916;8917;8918;8988;&header-text-color=%23FFFFFF&curr-name-color=%230059b0&inner-text-color=%23000000&green-text-color=%232A8215&green-background=%23B7F4C2&red-text-color=%23DC0001&red-background=%23FFE2E2&inner-border-color=%23CBCBCB&border-color=%23cbcbcb&bg1=%23F6F6F6&bg2=%23ffffff&open=hide&last_update=hide"></iframe><br /><span style="font-size: 11px;color: #333333;text-decoration: none;">Commodities are powered by <a href="http://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a></span>    
+                              
+                            </div>
+
+        </div>
+<h3>Section 1</h3>
+<div class="row">
+<div class="col-md-6">
+                            <h3>NEWS</h3>
+                            <script src="http://nmp.newsgator.com/NGBuzz/buzz.ashx?buzzId=81548&apiToken=9C4B229F9EA045939B9758E48447F327&trkP=&trkM=60C8F4BB-C857-ECFB-61C5-8C02A4810CFB" type="text/javascript"></script>
+                          </div>
+                          <div class="col-md-6">
+                              <h3>ECONOMIC CALENDAR</h3>
+                             <iframe src="http://ec.forexprostools.com?columns=exc_flags,exc_currency,exc_importance,exc_actual,exc_forecast,exc_previous&category=_employment,_economicActivity,_inflation,_credit,_centralBanks,_confidenceIndex,_balance,_Bonds&importance=1,2,3&features=datepicker,timezone&countries=25,32,6,37,72,22,17,39,14,48,10,35,7,43,60,36,110,11,26,12,4,5&calType=week&timeZone=8&lang=1" width="550" height="430" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe><div class="poweredBy"><span style="font-size: 11px;color: #333333;text-decoration: none;">Real Time Economic Calendar provided by <a href="http://www.Investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a>.</span></div> 
+                              
+                            </div>
+</div>
+<h3>Section 2</h3>
+<div class="row"> 
+<div class="col-md-6">
+                              <h3>Live World Indices</h3>
+                              <p>
+                                <iframe frameborder="0" scrolling="auto" height="175" width="100%" allowtransparency="true" marginwidth="0" marginheight="0" src="http://indrates.investing.com/index.php?pairs_ids=169;166;20;170;172;27;167;175;168;174;177;176;178;179;&header-text-color=%23FFFFFF&curr-name-color=%230059b0&inner-text-color=%23000000&green-text-color=%232A8215&green-background=%23B7F4C2&green-background=%23B7F4C2&red-text-color=%23DC0001&red-background=%23FFE2E2&inner-border-color=%23CBCBCB&border-color=%23cbcbcb&bg1=%23F6F6F6&bg2=%23ffffff&open=show&last_update=hide"></iframe><br /><span style="font-size: 11px;color: #333333;text-decoration: none;">Live World Indices are powered by <a href="http://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a></span>
+                                
+                              </p>
+                            </div>
+
+                             
+
+                              <div class="col-md-6">
+                              <h3>
+                                  Indices Quotes Widget</h3>
+                                  <p>
+                              <iframe frameborder="0" scrolling="auto" height="175" width="100%" allowtransparency="true" marginwidth="0" marginheight="0" src="http://fxrates.investing.com/index_exchange.php?params&inner-border-color=%23CBCBCB&border-color=%23cbcbcb&bg1=%23F6F6F6&bg2=%23ffffff&inner-text-color=%23000000&currency-name-color=%23000000&header-text-color=%23FFFFFF" align="center"></iframe><br /><div style="width:540px"><a href="http://www.investing.com" target="_blank"><img src="http://c1802182.cdn.cloudfiles.rackspacecloud.com/forexpros_en_logo.png" alt="Investing.com" title="Investing.com" style="float:left" /></a><span style="float:right"><span style="font-size: 11px;color: #333333;text-decoration: none;">The Exchange Rates are powered by <a href="http://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a>.</span></span></div></p>
+                            </div>
+                            <div class="col-md-6">
+                              <hr>
+                              <h3>Technical Analysis</h3>
+                              <iframe frameborder="0" scrolling="auto" height="280" width="360" allowtransparency="true" marginwidth="0" marginheight="0" src="http://tools.investing.com/technical_summary.php?pairs=2,3,4,8830,8836,8910&curr-name-color=%230059B0&fields=5m,1d"></iframe><br /><div style="width:345px;"><span style="float:left"><span style="font-size: 11px;color: #333333;text-decoration: none;">This Technical Analysis is powered by <a href="http://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a></span></span></div>
+                            </div>
+</div>
+<h3>Section 3</h3>
+<div class="row">
+<div class="col-md-6">
+                              <h3>Margin Calculator</h3>
+                              <iframe frameborder="0" scrolling="auto" height="425" width="100%" allowtransparency="true" marginwidth="0" marginheight="0" src="http://tools.investing.com/margin-calculator/index.php?acc=12&pair=1"></iframe><br /><div style="width:450"><a href="http://www.investing.com" target="_blank"><img src="http://c1802182.cdn.cloudfiles.rackspacecloud.com/forexpros_en_logo.png" alt="Investing.com" title="Investing.com" style="float:left" /></a><span style="float:right"><span style="font-size: 11px;color: #333333;text-decoration: none;">The Margin Calculator is powered by <a href="http://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a></span></span></div>
+                              
+                            </div>
+                            <div class="col-md-6">
+                              <h3>Profit Calculator</h3>
+                              <iframe frameborder="0" scrolling="auto" height="425" width="100%" allowtransparency="true" marginwidth="0" marginheight="0" src="http://tools.investing.com/profit-calculator/index.php?acc=12&pair=1"></iframe><br /><div style="width:450"><span style="float:left"><span style="font-size: 11px;color: #333333;text-decoration: none;">The Profit Calculator is powered by <a href="http://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a>.</span></span></div>
+                              
+                            </div>
+
+                            
+                            <div class="col-md-8">
+                              <h3>Pip Calculator</h3>
+                              <iframe frameborder="0" scrolling="auto" height="640" width="100%" allowtransparency="true" marginwidth="0" marginheight="0" src="http://tools.investing.com/pip-calculator/index.php?acc=12"></iframe><br /><div style="width:450"><span style="float:left"><span style="font-size: 11px;color: #333333;text-decoration: none;">The Pip Calculator is powered by <a href="http://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a></span></span></div>
+                              
+                            </div>
+
+                            <div class="col-md-4" >
+                              <h3>Currency Converter</h3>
+
+                              <iframe frameborder="0" scrolling="auto" height="375" width="auto"
+allowtransparency="true" marginwidth="0" marginheight="0"
+src="http://tools.investing.com/currency-converter/index.php?from=183&to=12"></iframe><br /><table width="197"><tr><td><span style="font-size: 11px;color: #333333;text-decoration: none;">The Currency Converter is powered by <a href="http://www.investing.com/" rel="nofollow" target="_blank" style="font-size: 11px;color: #06529D; font-weight: bold;" class="underline_link">Investing.com</a></span></td></tr></table>
+
+            </div>
+
+
+        </div>
+</div>
+                    

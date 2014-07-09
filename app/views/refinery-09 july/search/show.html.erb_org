@@ -1,0 +1,135 @@
+
+
+
+
+<!--=== Content Part ===-->
+<div class="container content"> 
+<!-- <div class="clearfix margin-bottom-30"></div> -->
+<div class="shadow-wrapper">
+    <div class="tag-box tag-box-v1 box-shadow shadow-effect-2">
+        <h2>One Template Endless Possibilities</h2>
+        <p><% content_for :body_content_title do %>
+
+  <%= t('.search_results_for', :what => params[:query]) %>
+<% end %>
+
+<% content_for :body do %>
+  <% if @results.empty? %>
+  <%= t('.no_results_for', :what => params[:query]) %>
+  <% else %>
+    <ul id="search_results">
+      <h1><a><i>Search Result</i></a></h1>
+      <% @results.each do |result| %>
+
+        <li style="list-style-type:none;">
+          <span class='result_type'>
+            <%= result_type result %>
+          </span>
+          <%= link_to result_title(result).html_safe, result_url(result) %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render "/refinery/content_page" %></p>
+    </div>
+</div>
+
+<div class="clearfix margin-bottom-40"></div>
+
+<!-- Service Blocks -->
+<div class="margin-bottom-20"></div>
+<div class="row margin-bottom-40">
+    <div class="col-md-3 col-sm-6">
+        <div class="servive-block servive-block-default">
+            <i class="icon-custom rounded-x icon-bg-dark fa fa-lightbulb-o"></i>
+            <h2 class="heading-md">Creative Ideas</h2>
+            <p>Koresol comes with some new and creative ideas to help you understanding the depth of BFS domain</p>                        
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+        <div class="servive-block servive-block-default">            
+            <i class="icon-custom rounded-x icon-bg-dark fa fa-info-circle"></i>
+            <h2 class="heading-md">Blogs</h2>
+            <p>We help to keep you updated with recent activities worldwide in the various aspects of stock market,sanctions</p>
+        </div>
+    </div>            
+    <div class="col-md-3 col-sm-6">
+        <div class="servive-block servive-block-default">            
+            <i class="icon-custom rounded-x icon-bg-dark icon-line fa-video-camera"></i>
+            <h2 class="heading-md">Video Trainings</h2>
+            <p>Koresol's video tutorial will guide you to cover diffrent fundamentals related to banking and financial services</p>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-6">
+        <div class="servive-block servive-block-default">
+            <i class="icon-custom rounded-x icon-bg-dark icon-line icon-plus"></i>
+            <h2 class="heading-md">Dedicated Support</h2>
+            <p>Need experts to analyze and assess your business operations, to automate or upgrade these operations to latest cutting edge IT solutions</p>
+        </div>
+    </div>
+</div>
+<!-- End Service Blokcs -->
+
+<!-- Info Blokcs -->
+<div class="row margin-bottom-40">
+  <!-- Welcome Block -->
+<div class="col-md-8 md-margin-bottom-40">
+  <div class="headline"><h2>Welcome To koresol</h2></div>
+        <div class="row">
+            <div class="col-sm-4">
+                <%= image_tag("girlls.png",:class=>"img-responsive margin-bottom-20",:alt=>"")%>
+                <!-- <img class="img-responsive margin-bottom-20" src="assets/new/img15.jpg" alt="" /> -->
+            </div>
+            <div class="col-sm-8">
+                <p>Our Domain Expert team posses</p>
+                <ul class="list-unstyled margin-bottom-20">
+                    <li><i class="fa fa-check color-green"></i> Excellent domain knowledge</li>
+                    <li><i class="fa fa-check color-green"></i>  More Than 12 years of Experience in Diffrent Aspects of Banking And Financial Services</li>
+                    <li><i class="fa fa-check color-green"></i> High quality technical strength/li>
+                    <li><i class="fa fa-check color-green"></i> In Depth knowledge of Software Deleopment Life Cycle (SDLC) to Provide Highly Effective Applications</li>
+                </ul>                    
+            </div>
+        </div>
+
+        <blockquote class="hero-unify">
+            <p>We have developed service packages using our in-depth knowledge and experience within the IT industry. The services that we offer will help your business gain the competitive edge you need, within a highly competitive BFS market.</p>
+            <!-- <small>CEO, Nitin Kore</small> -->
+        </blockquote>
+    </div><!--/col-md-8-->        
+
+    <!-- Posts -->
+    <div class="col-md-4 posts">
+        <div class="headline"><h3>What koresol provides</h3></div>
+        <dl class="dl-horizontal">
+            <dt><a href="#">
+                <%= image_tag("sliders/elastislide/6.jpg",:alt=>"")%>
+
+                <!-- <img alt="" src="assets/sliders/elastislide/6.jpg"> --></a></dt>
+            <dd>
+                <p><a href="#">It is our objective to simplify a client’s business processes, enabling us to affect change at foundational levels</a></p> 
+            </dd>
+        </dl>
+        <dl class="dl-horizontal">
+            <dt><a href="#">
+                <%= image_tag("sliders/elastislide/10.jpg",:alt=>"")%>
+                <!-- <img alt="" src="assets/sliders/elastislide/10.jpg"> --></a></dt>
+            <dd>
+                <p><a href="#">we aim to create lasting relationships with our clients through our Consultancy and IT services.</a></p> 
+            </dd>
+        </dl>
+        <dl class="dl-horizontal">
+            <dt><a href="#">
+                <%= image_tag("sliders/elastislide/11.jpg",:alt=>"")%>
+
+                <!-- <img alt="" src="assets/sliders/elastislide/11.jpg"> --></a></dt>
+            <dd>
+                <p><a href="#">We are inteded to help you in understanding Capital Market, Assets and Wealth Managment</a></p> 
+            </dd>
+        </dl>
+    </div>
+</div><!--/row--> 
+<!-- End Info Blokcs -->
+
+

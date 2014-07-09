@@ -1,9 +1,4 @@
-<style>
-.hide-fb
-{
-    Overflow:hidden;
-}
-</style>
+
 
 <script type="text/javascript">
         $(function(){    
@@ -124,12 +119,10 @@
         <div class="topbar">
             <div class="container" >
                 <!-- Topbar Navigation -->
-                
+                <div class="row">
+                    <div class="col-md-12">
+                <ul class="loginbar pull-right" style="padding-bottom:15px;  text-align:right;">
 
-                    
-                        
-                            <ul class="loginbar pull-left" style="padding-bottom:15px;">
-                        
 <!--                     <li>
                         <i class="fa fa-globe"></i>
                         <a>Languages</a>
@@ -146,43 +139,22 @@
                     <li><a href="page_faq.html">Help</a></li>   -->
                     <!-- <li class="topbar-devider"></li>    -->
                     <!-- <li><a href="page_login.html">Login</a></li> --> 
-               
-<li> 
-
-<div id="fb-root"></div>
-
+                    <li><div id="fb-root"></div>
 <script>(function(d, s, id) {
-
   var js, fjs = d.getElementsByTagName(s)[0];
-
   if (d.getElementById(id)) return;
-
   js = d.createElement(s); js.id = id;
-
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=515834955184538&version=v2.0";
-
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
   fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script></li>
 
-}(document, 'script', 'facebook-jssdk'));</script>
+<li><div class="fb-like" style="padding-bottom:10px;" data-href="http://www.facebook.com/koresol"
+data-width="50" data-layout="button_count" data-action="like"
+data-show-faces="true" data-share="false"></div></li>
 
- 
-
-<div class="fb-like" data-href="https://www.facebook.com/koresolpune" data-width="20" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
-
- 
-
-</li>
-<li><span style="padding-left:10px;"><a href="https://twitter.com/koresol" class="twitter-follow-button" data-show-count="false">Follow @koresol</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></span></li>
-
-
-</ul>
-
-
-<ul class="loginbar pull-right" style="padding-bottom:15px;">
 <li class="topbar-devider"></li>
 <li>
-<a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=300&amp;pubid=ra-53673b1b32318341"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width="125" height="16" style="vertical-align: text-bottom;" alt="Bookmark and Share" style="border:0"/></a>
+<a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=300&amp;pubid=ra-53673b1b32318341"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0"/></a>
 <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53673b1b32318341"></script>
 </li>
@@ -198,9 +170,7 @@
 
       <% end %>
     </a></li>  
-                </ul>
-                
-                       
+                </ul></div></div>
                 <!-- End Topbar Navigation -->
             </div>
         </div>
