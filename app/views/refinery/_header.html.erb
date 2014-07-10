@@ -1,10 +1,3 @@
-<style>
-.hide-fb
-{
-    Overflow:hidden;
-}
-</style>
-
 <script type="text/javascript">
         $(function(){    
         jQuery('.search').click(function () {
@@ -114,90 +107,57 @@
             });
 
 
-
-            </script>
+</script>
 
 <div class="wrapper">
     <!--=== Header ===-->    
-    <div class="header" >
+    <div class="header"  style="position-fixed;" id="something">
         <!-- Topbar -->
         <div class="topbar">
             <div class="container" >
                 <!-- Topbar Navigation -->
                 
-
-                    
-                        <span style="padding-left:10px;"><a href="https://twitter.com/koresol" class="twitter-follow-button" data-show-count="false">Follow @koresol</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></span>
-                            <ul class="loginbar pull-left" style="padding-bottom:15px;">
-                        
-<!--                     <li>
-                        <i class="fa fa-globe"></i>
-                        <a>Languages</a>
-                        <ul class="lenguages">
-                            <li class="active">
-                                <a href="#">English <i class="fa fa-check"></i></a> 
-                            </li>
-                            <li><a href="#">Spanish</a></li>
-                            <li><a href="#">Russian</a></li>
-                            <li><a href="#">German</a></li>
-                        </ul>
-                    </li>
-                    <li class="topbar-devider"></li>   
-                    <li><a href="page_faq.html">Help</a></li>   -->
-                    <!-- <li class="topbar-devider"></li>    -->
-                    <!-- <li><a href="page_login.html">Login</a></li> --> 
+<ul class="loginbar pull-right" style="padding-bottom:15px;">
                
 <li> 
 
-<div id="fb-root"></div>
-
-<script>(function(d, s, id) {
-
-  var js, fjs = d.getElementsByTagName(s)[0];
-
-  if (d.getElementById(id)) return;
-
-  js = d.createElement(s); js.id = id;
-
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=515834955184538&version=v2.0";
-
-  fjs.parentNode.insertBefore(js, fjs);
-
-}(document, 'script', 'facebook-jssdk'));</script>
-
+<iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fkoresolpune&amp;width=80&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=20&amp;appId=515834955184538" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:80px; height:20px; vertical-align:text-bottom;" allowTransparency="true"></iframe>
  
 
-<div class="fb-like" data-href="https://www.facebook.com/koresolpune" data-width="20" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
-
- 
-
-</li>
-
-</ul>
-
-
-<ul class="loginbar pull-right" style="padding-bottom:15px;">
-<li class="topbar-devider"></li>
+</li> 
+<li class="topbar-devider"></li> 
 <li>
-<a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=300&amp;pubid=ra-53673b1b32318341"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width="125" height="16" style="vertical-align: text-bottom;" alt="Bookmark and Share" style="border:0"/></a>
-<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53673b1b32318341"></script>
+<iframe allowtransparency="true" frameborder="0" scrolling="no" 
+  src="//platform.twitter.com/widgets/follow_button.html?screen_name=koresol"
+  style="width:185px; height:20px; vertical-align:text-bottom;"></iframe>
 </li>
+
+
+ <li class="topbar-devider"></li> 
+ <li> <a class="addthis_button"
+href="http://www.addthis.com/bookmark.php?v=300&amp;pubid=ra-53673b1b32318341"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width="125" height="16" style="vertical-align: text-bottom;" alt="Bookmark and Share" style="border:0"/></a> <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+<script type="text/javascript"
+src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53673b1b32318341"></script>
+</li>
+
+
+
                     <li class="topbar-devider"></li>
                     <i class="fa fa-user color-green"></i>
                     <li><a>
       <% if current_user %>
         Logged in as <%= current_user.email %>.
-        <%= link_to "Log out", main_app.userlogout_path, :style=>"color:#4A8AC6; font-weight:bold;"%>
+        <%= link_to "Log out",
+main_app.userlogout_path, :style=>"color:#4A8AC6; font-weight:bold;"%>
       <% else %>
-        <%= link_to "Sign up", main_app.usersignup_path, :style=>"color:#4A8AC6; font-weight:bold;" %> or
-        <%= link_to "Log in", main_app.userlogin_path, :style=>"color:#4A8AC6; font-weight:bold;" %>.
+        <%= link_to "Sign up",
+main_app.usersignup_path, :style=>"color:#4A8AC6; font-weight:bold;" %> or
+        <%= link_to "Log in",
+main_app.userlogin_path, :style=>"color:#4A8AC6; font-weight:bold;" %>.
 
       <% end %>
     </a></li>  
-                </ul>
-                
+                </ul>                
                        
                 <!-- End Topbar Navigation -->
             </div>
