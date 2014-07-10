@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: http://www.xml-sitemaps.com/download/bfskoresol.10798277/sitemap.xml
